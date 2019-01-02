@@ -19,7 +19,7 @@ void _IRPinConfig(void) {
     INTCON2bits.RBPU = 0;
     
     // set RB0 to digital input
-    ADCON1 = 0b00000011; // ONLY RB0 is digital input!
+    ADCON1 = 0b00001111; 
     TRISBbits.RB0 = 1;
 }
 

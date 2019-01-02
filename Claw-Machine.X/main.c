@@ -58,23 +58,38 @@
 #include <xc.h>
 #include "modules/IR.h"
 #include "modules/TT.h"
+#include "modules/TM1637.h"
 
-/* ??????? pin ?? interrupt
- * RB0
- * RD0~RD3
+/* occupied pin or interrupt
+ * RB0 -> infrared
+ * RB1 -> micro switch for coin detection
+ * RD0~RD3 -> motor
+ * RC6, RC7 -> CLK/DIO for seven-segment display
  */
+
+int NUMBER; // for seven-segment display
 
 void main(void) {
     IRConfig();
     TTConfig();
+    I2CConfig();
+    
+    while (1);
     return;
 }
+
 
 void __interrupt(high_priority) HI_ISR(void) {
     if (INTCONbits.INT0IF) { // infra-red control
         INTCONbits.INT0IF = 0;
         Nop();
     }
+    else if (INTCON3bits.INT1IF) { // micro switch for seven-segment display
+        INTCON3bits.INT1IF = 0;
+        NUMBER += 10;
+        Display(NUMBER);
+    }
+
 }
 
 void __interrupt(low_priority) LO_ISR(void) {

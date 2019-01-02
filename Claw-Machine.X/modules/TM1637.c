@@ -1,16 +1,10 @@
-/* 
- * File:   tm1637.c
- * Author: f26401004
- *
- * Created on January 2, 2019, 10:15 AM
- */
-
 #include <xc.h>
-
+#include "TM1637.h"
+#define _XTAL_FREQ 1000000
 #define CLK PORTCbits.RC6
 #define DIO PORTCbits.RC7
+
 const char NUMBER_LIST[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7C, 0x07, 0x7F, 0x67};
-int NUMBER= 0;
 // config global iteration variable
 int i;
 
@@ -87,24 +81,13 @@ void I2CConfig() {
     TRISCbits.TRISC6 = TRISCbits.TRISC7 = 0;
     // set button interrupt
     TRISBbits.TRISB1 = 1;
-    // set  INT0
+    // set  INT1
     INTCON3bits.INT1IF = 0;
     INTCON3bits.INT1IE = 1;
-    INTCON2bits.INTEDG1 = 0;
+    INTCON2bits.INTEDG1 = 1;
     // set global interrupt
     RCONbits.IPEN = 1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
 }
-/*
-void __interrupt() button_isr() {
-    Nop();
-    if (INTCON3bits.INT1IF && INTCON3bits.INT1IE) {
-        __delay_ms(300);
-        NUMBER += 10;
-        Display(NUMBER);
-        INTCON3bits.INT1IF = 0;
-    }
-    
-}
-*/
+
