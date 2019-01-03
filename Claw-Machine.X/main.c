@@ -59,6 +59,7 @@
 #include "modules/IR.h"
 #include "modules/TT.h"
 #include "modules/TM1637.h"
+#include "modules/XYSensor.h"
 
 /* occupied pin or interrupt
  * RB0 -> infrared
@@ -68,12 +69,15 @@
  */
 
 int NUMBER; // for seven-segment display
+int SENSOR_X, SENSOR_Y;
 
 void main(void) {
     IRConfig();
     TTConfig();
     I2CConfig();
-    
+    ADCConfig();
+    // start first adc conversion
+    ADCON0bits.GO = 1;
     while (1);
     return;
 }
@@ -88,6 +92,15 @@ void __interrupt(high_priority) HI_ISR(void) {
         INTCON3bits.INT1IF = 0;
         NUMBER += 10;
         Display(NUMBER);
+    } else if (PIR1bits.ADIF) { // XY Sensor ADC convertor interrupt
+        PIR1bits.ADIF = 0;
+        if (ADCON0bits.CHS) {
+            SENSOR_X = (ADRESH * 256) | (ADRESL);
+        } else {
+            SENSOR_Y = (ADRESH * 256) | (ADRESL);
+        }
+        ADCON0bits.CHS =  1 - ADCON0bits.CHS;
+        ADCON0bits.GO = 1;
     }
 
 }
