@@ -86,7 +86,6 @@
 #define TMR2PRESCALE 16
 #define TMR0PRESCALE 256
 
-//int tempo = 2500;
 int led_cycle = 0;
 int led2_cycle = 0;
 int tmr3_cycle = 1;
@@ -98,7 +97,27 @@ int MELODY_PTR2;
 
 int current_tone = 0; // current playing note
 int current_tone_duration = 0; // current note duration
-int note_change;
+int isRunning = 0;
+int *wm_1;
+char *wb_1;
+int *wm_2;
+char *wb_2;
+
+const int melody4[] = {
+    C4,C4,G5,G5,A5,A5,G5,F4,F4,E4,E4,D4,D4,C4
+};
+const char beats4[] = {
+    8,8,8,8,8,8,4,8,8,8,8,8,8,4
+};
+
+const int melody3[] = {
+    D5,D5,E5,C5,C5,E5, B4,R,E5,R,A4,R,E5,R, D5,D5,E5,C5,C5,E5, B4,R,E5,R,A4,R,    
+};
+
+const char beats3[] = {
+    4,8,8,4,8,8, 8,8,8,8,8,8,8,8, 4,8,8,4,8,8, 8,8,8,8,4,4
+};
+
 const int melody2[] = {C5,B4L, A4,F5,F5,C5,A4, B4L,F5,F5,F5,G5, F5,C5,C5,C5,B4L,B4L,B4L,A4,B4L,B4L,C5,C5,
                     C5,C5,C5,C5,B4L, A4,F5,F5,C5,A4, B4L,G5,G5,A5,B5L, C6,F5,F5,D5,C5,F5,E5,F5,F5, F5,R,C5,A5,A5,G5,
                     R,D5,F5,D5,A5,D5,F5,D5, R,D5,F5,D5,A5,G5,F5,G5, R,F5,G5,F5,G5,F5,G5,F5,G5,F5,G5,F5,G5,A5,
@@ -126,13 +145,25 @@ const int melody[] = {R,R, F4, F4, F4, G4,
                        F4,A4,A4,G4,F4, F4,G4,R, G4,A4, B4L,C5,
                        D4,D4,B4L,B4L,B4L,B4L,B4L,B4L,B4L,B4L,B4L,B4L,B4L,B4L,
                        D4,D4,A4,A4,A4,A4,A4,A4,A4,A4,A4,A4,A4,A4,
-                       R, R,C5,D5,C5,A4, R,A4,C5,A5,C5,A5,C5,A5, R,A4,C5,A5,C5,C5,A4,G4
-                        };
+                       C5,R,G4,F4,E4, R,C5,D5,C5,A4, R,A4,C5,A5,C5,A5,C5,A5, R,A4,C5,A5,C5,C5,A4,G4,
+                       G4,A4, B4L,B4L,R,D4,F4,G4,F4, F4,F4,G4,F4,F4,F4,B4L, F4,E4,D4,C4,C4,C4,F4,
+                       F4,F4,F4,A4,D4,D4, D4,A4,G4,G4,A4,C4, C4,C4,C4,C4,C4,C4,C4,C4,C4, F4,F4,F4,F4,F4,F4,C4,C4,C4,C5,
+                       F4,F4,D4,D4,C4,C4,C4,F4, C4,C4,C4,C4,C4,C4,C4,A4,G4,F4, F4,F4,E4,F4,F4,A4,B4L, F4,E4,C4,E4,C4,C4,C4,G4,F4,
+                       F4,F4,F4,F4,D4,D4, D4,A4,G4,G4,A4,E4, C4,C4,C4,C4,C4,C4,C4,C4,C4, 
+                       C4,C4,C4,C4,C4,F4,C4,C4,C4,C5, F4,F4,D4,D4,C4,C4,F4, C4,C4,C4,C4,C4,C4,C4,A4,C4,F4, F4,
+                       F4
+};
 const char beats[] = {8,16, 1, 1, 1, 1,
                        4,2,8,16,16, 4,2,4, 2,2, 2,2,
                        8,8,16,16,16,16,16,16,16,16,16,16,16,16,
                        8,8,16,16,16,16,16,16,16,16,16,16,16,16,
-                       1, 2,4,8,16,16, 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8
+                       2,8,16,16,4, 2,4,8,16,16, 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8,
+                       2,2, 2,8,16,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
+                       4,4,8,16,8,6, 8,16,8,8,16,2, 8,16,16,8,16,8,8,4,16, 16,16,16,16,8,16,8,8,6,8,
+                       4,8,16,16,4,8,16,16, 16,16,8,8,16,4,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
+                       4,4,8,16,8,6, 8,16,8,8,16,2, 8,16,16,8,16,8,8,4,16, 
+                       16,16,16,16,8,16,8,8,6,8, 4,8,16,16,4,8,16,16, 16,16,16,8,8,16,8,8,8,8, 1,
+                       1
                         };
 
 //void delay_ms(unsigned int milliseconds) {
@@ -228,7 +259,8 @@ void playTone() {
     PWM_Duty(512); // set duty cycle to 50%
 }
 
-int main(int argc, char** argv) {
+void Setup(int song) {
+     
     TRISCbits.TRISC1 = 0;
     CCP2CON = 0x02;
     PIR2bits.CCP2IF = 0;
@@ -237,12 +269,32 @@ int main(int argc, char** argv) {
     CCPR2 = 1000;
     T3CONbits.TMR3ON = 1;
     
+    if (song == 0) {
+        wm_1 = melody;
+        wb_1 = beats;
+        wm_2 = melody2;
+        wb_2 = beats2;
+        MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
+        MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
+    }
+    else if (song == 1){
+        wm_1 = melody3;
+        wb_1 = beats3;
+        wm_2 = melody3;
+        wb_2 = beats3;
+        MELODY_LENGTH = sizeof (melody3) / sizeof (melody3[0]);
+        MELODY_LENGTH2 = sizeof (melody3) / sizeof (melody3[0]);
+    }
+    else {
+        wm_1 = melody4;
+        wb_1 = beats4;
+        wm_2 = melody4;
+        wb_2 = beats4;
+        MELODY_LENGTH = sizeof (melody4) / sizeof (melody4[0]);
+        MELODY_LENGTH2 = sizeof (melody4) / sizeof (melody4[0]);
+    }
     
-    TRISDbits.TRISD0 = 0;
-    
-    MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
     MELODY_PTR = 0;
-    MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
     MELODY_PTR2 = 0;
 
     CalcSpeed(16, 0);
@@ -256,8 +308,35 @@ int main(int argc, char** argv) {
     PWM_Init(500); //exact value doesn't matter at all, just not 0
     PWM_Duty(0);
     PWM_Start();
+}
+
+int main(int argc, char** argv) {
+    // input to trigger music
+    TRISDbits.TRISD0 = 1;
+    TRISDbits.TRISD1 = 1;
+    PORTDbits.RD0 = 0;
+    PORTDbits.RD1 = 0;   
 
     while (1) {
+        if (PORTDbits.RD0 == 0 && PORTDbits.RD1 == 0) {
+            isRunning = 0;
+            TRISCbits.TRISC0 = 1;
+            TRISCbits.TRISC1 = 1;
+            INTCONbits.TMR0IE = 1;
+            PWM_Duty(0);
+        }
+        if (!isRunning && PORTDbits.RD0 == 1 && PORTDbits.RD1 == 0) {
+            isRunning = 1;
+            Setup(0);
+        }
+        else if (!isRunning && PORTDbits.RD1 == 1 && PORTDbits.RD0 == 0) {
+            isRunning = 1;
+            Setup(1);
+        }
+        else if (!isRunning && PORTDbits.RD0 == 1 && PORTDbits.RD1 == 1) {
+            isRunning = 1;
+            Setup(2);
+        }
         if (PIR2bits.CCP2IF) {
             PIR2bits.CCP2IF = 0;
             TMR3 = 0;
@@ -269,18 +348,28 @@ int main(int argc, char** argv) {
 void __interrupt(high_priority) HI_ISR(void) {
     if (INTCONbits.TMR0IF) { 
         INTCONbits.TMR0IF = 0;
-        LATDbits.LATD2 ^= 1;
         TMR0 = 0xF1;
+        
+        if (MELODY_PTR >= MELODY_LENGTH && MELODY_PTR2 >= MELODY_LENGTH2) {
+            MELODY_PTR = 0;
+            MELODY_PTR2 = 0;
+            led_cycle = 0;
+            led2_cycle = 0;
+            
+            isRunning = 0;
+            TRISCbits.TRISC0 = 1;
+            TRISCbits.TRISC1 = 1;
+            INTCONbits.TMR0IE = 1;
+            PWM_Duty(0);
+        }
         
         ++led_cycle;
         ++led2_cycle;
-        if (led_cycle >= tmr1_cycle) {
-            ++MELODY_PTR;
-           
-            if (MELODY_PTR >= MELODY_LENGTH) MELODY_PTR = 0;
+        if (led_cycle >= tmr1_cycle && MELODY_PTR < MELODY_LENGTH) {
+            ++MELODY_PTR;           
             
-            current_tone = melody[MELODY_PTR];
-            int beat = beats[MELODY_PTR];
+            current_tone = wm_1[MELODY_PTR];
+            int beat = wb_1[MELODY_PTR];
             if (beat == 1) tmr1_cycle = 48;
             else if (beat == 2) tmr1_cycle = 24;
             else if (beat == 4) tmr1_cycle = 12;
@@ -288,7 +377,7 @@ void __interrupt(high_priority) HI_ISR(void) {
             else if (beat == 8) tmr1_cycle = 6;
             else if (beat == 16) tmr1_cycle = 3;
             tmr1_cycle *= 10;
-            if (melody[MELODY_PTR] == R) { //close the buzzer
+            if (wm_1[MELODY_PTR] == R) { //close the buzzer
                 TRISCbits.TRISC0 = 1;
             }
             else {
@@ -300,24 +389,22 @@ void __interrupt(high_priority) HI_ISR(void) {
             led_cycle = 0;
         }
         
-        if (led2_cycle >= tmr3_cycle) {
+        if (led2_cycle >= tmr3_cycle && MELODY_PTR2 < MELODY_LENGTH2) {
             ++MELODY_PTR2;
-           
-            if (MELODY_PTR2 >= MELODY_LENGTH2) MELODY_PTR2 = 0;
             
 //            ++CCPR2; // 500 means 1000Hz
 //            if (CCPR2 > 2000) CCPR2 = 0;
-            CCPR2 = 1000000/melody2[MELODY_PTR2];
-            if (melody2[MELODY_PTR2] == R) { //close the buzzer
+            CCPR2 = 1000000/wm_2[MELODY_PTR2];
+            if (wm_2[MELODY_PTR2] == R) { //close the buzzer
                 TRISCbits.TRISC1 = 1;
                 CCPR2 = 0;
             }
             else {
                 TRISCbits.TRISC1 = 0;
-                CCPR2 = 1000000/melody2[MELODY_PTR2];
+                CCPR2 = 1000000/wm_2[MELODY_PTR2];
             }
             
-            int beat = beats2[MELODY_PTR2];
+            int beat = wb_2[MELODY_PTR2];
             if (beat == 1) tmr3_cycle = 48;
             else if (beat == 2) tmr3_cycle = 24;
             else if (beat == 4) tmr3_cycle = 12;

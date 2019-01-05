@@ -4571,14 +4571,18 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config EBTRB = OFF
 # 90 "newmain.c"
 int led_cycle = 0;
-long long tmr1_cycle = 1;
-int bpm = 120;
+int led2_cycle = 0;
+int tmr3_cycle = 1;
+int tmr1_cycle = 1;
 int MELODY_LENGTH;
 int MELODY_PTR;
+int MELODY_LENGTH2;
+int MELODY_PTR2;
 
 int current_tone = 0;
 int current_tone_duration = 0;
-const int melody[] = {523,466, 440,698,698,523,440, 466,698,698,698,784, 698,523,523,523,466,466,466,440,466,466,523,523,
+int note_change;
+const int melody2[] = {523,466, 440,698,698,523,440, 466,698,698,698,784, 698,523,523,523,466,466,466,440,466,466,523,523,
                     523,523,523,523,466, 440,698,698,523,440, 466,784,784,880,932, 1046,698,698,587,523,698,659,698,698, 698,0,523,880,880,784,
                     0,587,698,587,880,587,698,587, 0,587,698,587,880,784,698,784, 0,698,784,698,784,698,784,698,784,698,784,698,784,880,
                     932,1046,880,784,784,880,698,587, 0,587,698,587,880,587,698,587, 0,587,698,587,880,784,698,784,
@@ -4589,8 +4593,8 @@ const int melody[] = {523,466, 440,698,698,523,440, 466,698,698,698,784, 698,523
                     880,880,880,880,880,698,932,880,698,1046, 1046,1046,932,880,698,698,523,698, 784,784,880,880,784,784,932,880,523,698, 698,
                     0
                     };
-const char beats[] = {16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,8,16,16,8,16,16,8,16,16,16,
-                2,4,8,16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,6,16,6,16,6,16,8, 6,8,16,16,16,2,
+const char beats2[] = {16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,8,16,16,8,16,16,8,16,16,16,
+                2,4,8,16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,6,16,6,16,6,16,16, 6,8,16,16,16,2,
                 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8, 16,16,16,16,16,16,16,16,8,16,8,16,16,16,
                 8,8,8,8,4,8,16,16, 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8,
                 2,2, 2,8,16,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
@@ -4600,28 +4604,58 @@ const char beats[] = {16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,8,16,16,8,16,16,8,16
                 16,16,16,16,8,16,8,8,6,8, 4,8,16,16,4,8,16,16, 16,16,16,8,8,16,8,8,8,8, 1,
                 1
                 };
-# 128 "newmain.c"
+
+const int melody[] = {0,0, 349, 349, 349, 392,
+                       349,440,440,392,349, 349,392,0, 392,440, 466,523,
+                       293,293,466,466,466,466,466,466,466,466,466,466,466,466,
+                       293,293,440,440,440,440,440,440,440,440,440,440,440,440,
+                       523,0,392,349,329, 0,523,587,523,440, 0,440,523,880,523,880,523,880, 0,440,523,880,523,523,440,392,
+                       392,440, 466,466,0,293,349,392,349, 349,349,392,349,349,349,466, 349,329,293,261,261,261,349,
+                       349,349,349,440,293,293, 293,440,392,392,440,261, 261,261,261,261,261,261,261,261,261, 349,349,349,349,349,349,261,261,261,523,
+                       349,349,293,293,261,261,261,349, 261,261,261,261,261,261,261,440,392,349, 349,349,329,349,349,440,466, 349,329,261,329,261,261,261,392,349,
+                       349,349,349,349,293,293, 293,440,392,392,440,329, 261,261,261,261,261,261,261,261,261,
+                       261,261,261,261,261,349,261,261,261,523, 349,349,293,293,261,261,349, 261,261,261,261,261,261,261,440,261,349, 349,
+                       349
+};
+const char beats[] = {8,16, 1, 1, 1, 1,
+                       4,2,8,16,16, 4,2,4, 2,2, 2,2,
+                       8,8,16,16,16,16,16,16,16,16,16,16,16,16,
+                       8,8,16,16,16,16,16,16,16,16,16,16,16,16,
+                       2,8,16,16,4, 2,4,8,16,16, 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8,
+                       2,2, 2,8,16,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
+                       4,4,8,16,8,6, 8,16,8,8,16,2, 8,16,16,8,16,8,8,4,16, 16,16,16,16,8,16,8,8,6,8,
+                       4,8,16,16,4,8,16,16, 16,16,8,8,16,4,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
+                       4,4,8,16,8,6, 8,16,8,8,16,2, 8,16,16,8,16,8,8,4,16,
+                       16,16,16,16,8,16,8,8,6,8, 4,8,16,16,4,8,16,16, 16,16,16,8,8,16,8,8,8,8, 1,
+                       1
+                        };
+# 157 "newmain.c"
 void SetupClock() {
     OSCCONbits.IRCF = 0b110;
     OSCCONbits.SCS = 0b00;
 }
 
-int CalcSpeed(int beat) {
-    if (beat == 1) tmr1_cycle = 32;
-    else if (beat == 2) tmr1_cycle = 16;
-    else if (beat == 4) tmr1_cycle = 8;
-    else if (beat == 6) tmr1_cycle = 4;
-    else if (beat == 8) tmr1_cycle = 2;
-    else if (beat == 16) tmr1_cycle = 1;
-    tmr1_cycle *= 2;
+int CalcSpeed(int beat, int pos) {
+    int tmp;
+    if (beat == 1) tmp = 48;
+    else if (beat == 2) tmp = 24;
+    else if (beat == 4) tmp = 12;
+    else if (beat == 6) tmp = 9;
+    else if (beat == 8) tmp = 6;
+    else if (beat == 16) tmp = 3;
+    else {
+        tmp = 1;
+    }
+    tmp *= 10;
 
+    if (pos) tmr1_cycle = tmp;
+    else tmr3_cycle = tmp;
     __nop();
-    TMR0 = 0;
     return 0;
 }
 
 void SetupTimer() {
-    T0CON = 0b11010110;
+    T0CON = 0b11010111;
     INTCONbits.TMR0IE = 1;
     INTCONbits.TMR0IF = 0;
 
@@ -4630,7 +4664,7 @@ void SetupTimer() {
     INTCONbits.PEIE = 1;
     led_cycle = 0;
 }
-# 167 "newmain.c"
+# 201 "newmain.c"
 void PWM_Init(long desired_frequency) {
     PR2 = (4000000 / (desired_frequency * 4 * 16)) - 1;
     current_tone = desired_frequency;
@@ -4673,13 +4707,24 @@ void playTone() {
     PWM_Duty(512);
 }
 
-int main(int argc, char** argv) {
-    TRISDbits.TRISD0 = 0;
+void Setup() {
+
+    TRISCbits.TRISC1 = 0;
+    CCP2CON = 0x02;
+    PIR2bits.CCP2IF = 0;
+    TMR3 = 0;
+    T3CON = 0xC0;
+    CCPR2 = 1000;
+    T3CONbits.TMR3ON = 1;
+
 
     MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
     MELODY_PTR = 0;
+    MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
+    MELODY_PTR2 = 0;
 
-    CalcSpeed(16);
+    CalcSpeed(16, 0);
+    CalcSpeed(16, 1);
     SetupClock();
     SetupTimer();
 
@@ -4689,9 +4734,33 @@ int main(int argc, char** argv) {
     PWM_Init(500);
     PWM_Duty(0);
     PWM_Start();
+}
 
+int main(int argc, char** argv) {
+
+    TRISDbits.TRISD0 = 1;
+    PORTDbits.RD0 = 0;
+
+    Setup();
+
+
+    int isRunning = 1;
     while (1) {
-
+        if (PORTDbits.RD0 == 0) {
+            isRunning = 0;
+            TRISCbits.TRISC0 = 1;
+            TRISCbits.TRISC1 = 1;
+            INTCONbits.TMR0IE = 1;
+            PWM_Duty(0);
+        }
+        if (!isRunning && PORTDbits.RD0 == 1) {
+            isRunning = 1;
+            Setup();
+        }
+        if (PIR2bits.CCP2IF) {
+            PIR2bits.CCP2IF = 0;
+            TMR3 = 0;
+        }
     }
     return 0;
 }
@@ -4699,24 +4768,68 @@ int main(int argc, char** argv) {
 void __attribute__((picinterrupt("high_priority"))) HI_ISR(void) {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
+        TMR0 = 0xF1;
+
+        if (MELODY_PTR >= MELODY_LENGTH && MELODY_PTR2 >= MELODY_LENGTH2) {
+            MELODY_PTR = 0;
+            MELODY_PTR2 = 0;
+            led_cycle = 0;
+            led2_cycle = 0;
+        }
 
         ++led_cycle;
-        if (led_cycle == tmr1_cycle) {
-            current_tone = melody[MELODY_PTR];
-            CalcSpeed(beats[MELODY_PTR]);
-
-
-            PWM_Duty(0);
-            int cnt = 0;
-            while (++cnt < 10000);
-        playTone();
-
-
-            LATDbits.LATD0 ^= 1;
-            led_cycle = 0;
-
+        ++led2_cycle;
+        if (led_cycle >= tmr1_cycle && MELODY_PTR < MELODY_LENGTH) {
             ++MELODY_PTR;
-            if (MELODY_PTR > MELODY_LENGTH) MELODY_PTR = 0;
+
+            current_tone = melody[MELODY_PTR];
+            int beat = beats[MELODY_PTR];
+            if (beat == 1) tmr1_cycle = 48;
+            else if (beat == 2) tmr1_cycle = 24;
+            else if (beat == 4) tmr1_cycle = 12;
+            else if (beat == 6) tmr1_cycle = 9;
+            else if (beat == 8) tmr1_cycle = 6;
+            else if (beat == 16) tmr1_cycle = 3;
+            tmr1_cycle *= 10;
+            if (melody[MELODY_PTR] == 0) {
+                TRISCbits.TRISC0 = 1;
+            }
+            else {
+                TRISCbits.TRISC0 = 0;
+            }
+
+            playTone();
+
+            led_cycle = 0;
+        }
+
+        if (led2_cycle >= tmr3_cycle && MELODY_PTR2 < MELODY_LENGTH2) {
+            ++MELODY_PTR2;
+
+            if (MELODY_PTR2 > MELODY_LENGTH2) return;
+
+
+
+            CCPR2 = 1000000/melody2[MELODY_PTR2];
+            if (melody2[MELODY_PTR2] == 0) {
+                TRISCbits.TRISC1 = 1;
+                CCPR2 = 0;
+            }
+            else {
+                TRISCbits.TRISC1 = 0;
+                CCPR2 = 1000000/melody2[MELODY_PTR2];
+            }
+
+            int beat = beats2[MELODY_PTR2];
+            if (beat == 1) tmr3_cycle = 48;
+            else if (beat == 2) tmr3_cycle = 24;
+            else if (beat == 4) tmr3_cycle = 12;
+            else if (beat == 6) tmr3_cycle = 9;
+            else if (beat == 8) tmr3_cycle = 6;
+            else if (beat == 16) tmr3_cycle = 3;
+            tmr3_cycle *= 10;
+
+            led2_cycle = 0;
         }
 
     }

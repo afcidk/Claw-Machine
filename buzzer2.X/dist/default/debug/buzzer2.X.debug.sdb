@@ -41,54 +41,64 @@
 "10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-"145 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"176 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v _SetupClock SetupClock `(v  1 e 1 0 ]
-"150
+"181
 [v _CalcSpeed CalcSpeed `(i  1 e 2 0 ]
-"169
+"200
 [v _SetupTimer SetupTimer `(v  1 e 1 0 ]
-"189
+"220
 [v _PWM_Init PWM_Init `(v  1 e 1 0 ]
 [v i2_PWM_Init PWM_Init `(v  1 e 1 0 ]
-"194
+"225
 [v _PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
 [v i2_PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
-"198
+"229
 [v _PWM_Duty PWM_Duty `(v  1 e 1 0 ]
 [v i2_PWM_Duty PWM_Duty `(v  1 e 1 0 ]
-"207
+"238
 [v _PWM_Mode_On PWM_Mode_On `(v  1 e 1 0 ]
-"212
+"243
 [v _PWM_Start PWM_Start `(v  1 e 1 0 ]
-"226
+"257
 [v _playTone playTone `(v  1 e 1 0 ]
-"231
+"262
+[v _Setup Setup `(v  1 e 1 0 ]
+"313
 [v _main main `(i  1 e 2 0 ]
-"269
+"348
 [v _HI_ISR HI_ISR `IIH(v  1 e 1 0 ]
-"1201 /opt/microchip/xc8/v2.00/pic/include/pic18f4520.h
+[s S325 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"669 /opt/microchip/xc8/v2.00/pic/include/pic18f4520.h
+[s S365 . 1 `uc 1 PSP0 1 0 :1:0 
+`uc 1 PSP1 1 0 :1:1 
+`uc 1 PSP2 1 0 :1:2 
+`uc 1 PSP3 1 0 :1:3 
+`uc 1 PSP4 1 0 :1:4 
+`uc 1 PSP5 1 0 :1:5 
+`uc 1 PSP6 1 0 :1:6 
+`uc 1 PSP7 1 0 :1:7 
+]
+[s S374 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 P1B 1 0 :1:5 
+`uc 1 P1C 1 0 :1:6 
+`uc 1 P1D 1 0 :1:7 
+]
+[s S379 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S382 . 1 `S325 1 . 1 0 `S365 1 . 1 0 `S374 1 . 1 0 `S379 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES382  1 e 1 @3971 ]
+"1201
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S356 . 1 `uc 1 LATD0 1 0 :1:0 
-`uc 1 LATD1 1 0 :1:1 
-`uc 1 LATD2 1 0 :1:2 
-`uc 1 LATD3 1 0 :1:3 
-`uc 1 LATD4 1 0 :1:4 
-`uc 1 LATD5 1 0 :1:5 
-`uc 1 LATD6 1 0 :1:6 
-`uc 1 LATD7 1 0 :1:7 
-]
-"1340
-[s S365 . 1 `uc 1 LD0 1 0 :1:0 
-`uc 1 LD1 1 0 :1:1 
-`uc 1 LD2 1 0 :1:2 
-`uc 1 LD3 1 0 :1:3 
-`uc 1 LD4 1 0 :1:4 
-`uc 1 LD5 1 0 :1:5 
-`uc 1 LD6 1 0 :1:6 
-`uc 1 LD7 1 0 :1:7 
-]
-[u S374 . 1 `S356 1 . 1 0 `S365 1 . 1 0 ]
-[v _LATDbits LATDbits `VES374  1 e 1 @3980 ]
 [s S186 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -110,7 +120,7 @@
 ]
 [u S204 . 1 `S186 1 . 1 0 `S195 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES204  1 e 1 @3988 ]
-[s S315 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S316 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -120,17 +130,8 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "2175
-[s S324 . 1 `uc 1 RD0 1 0 :1:0 
-`uc 1 RD1 1 0 :1:1 
-`uc 1 RD2 1 0 :1:2 
-`uc 1 RD3 1 0 :1:3 
-`uc 1 RD4 1 0 :1:4 
-`uc 1 RD5 1 0 :1:5 
-`uc 1 RD6 1 0 :1:6 
-`uc 1 RD7 1 0 :1:7 
-]
-[u S333 . 1 `S315 1 . 1 0 `S324 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES333  1 e 1 @3989 ]
+[u S334 . 1 `S316 1 . 1 0 `S325 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES334  1 e 1 @3989 ]
 [s S227 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 TMR3IF 1 0 :1:1 
 `uc 1 HLVDIF 1 0 :1:2 
@@ -278,68 +279,92 @@
 [v _T2CKPS1 T2CKPS1 `VEb  1 e 0 @32337 ]
 "8530
 [v _TMR2ON TMR2ON `VEb  1 e 0 @32338 ]
-"90 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"89 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v _led_cycle led_cycle `i  1 e 2 0 ]
-"91
+"90
 [v _led2_cycle led2_cycle `i  1 e 2 0 ]
-"92
+"91
 [v _tmr3_cycle tmr3_cycle `i  1 e 2 0 ]
-"93
+"92
 [v _tmr1_cycle tmr1_cycle `i  1 e 2 0 ]
-"94
+"93
 [v _MELODY_LENGTH MELODY_LENGTH `i  1 e 2 0 ]
-"95
+"94
 [v _MELODY_PTR MELODY_PTR `i  1 e 2 0 ]
-"96
+"95
 [v _MELODY_LENGTH2 MELODY_LENGTH2 `i  1 e 2 0 ]
-"97
+"96
 [v _MELODY_PTR2 MELODY_PTR2 `i  1 e 2 0 ]
-"99
+"98
 [v _current_tone current_tone `i  1 e 2 0 ]
+"100
+[v _isRunning isRunning `i  1 e 2 0 ]
+"101
+[v _wm_1 wm_1 `*.25i  1 e 2 0 ]
 "102
-[v _melody2 melody2 `C[249]i  1 e 498 0 ]
+[v _wb_1 wb_1 `*.25uc  1 e 2 0 ]
+"103
+[v _wm_2 wm_2 `*.25i  1 e 2 0 ]
+"104
+[v _wb_2 wb_2 `*.25uc  1 e 2 0 ]
+"106
+[v _melody4 melody4 `C[14]i  1 e 28 0 ]
+"109
+[v _beats4 beats4 `C[14]uc  1 e 14 0 ]
 "113
+[v _melody3 melody3 `C[26]i  1 e 52 0 ]
+"117
+[v _beats3 beats3 `C[26]uc  1 e 26 0 ]
+"121
+[v _melody2 melody2 `C[249]i  1 e 498 0 ]
+"132
 [v _beats2 beats2 `C[249]uc  1 e 249 0 ]
-"125
-[v _melody melody `C[68]i  1 e 136 0 ]
-"131
-[v _beats beats `C[68]uc  1 e 68 0 ]
-"231
+"144
+[v _melody melody `C[210]i  1 e 420 0 ]
+"156
+[v _beats beats `C[213]uc  1 e 213 0 ]
+"313
 [v _main main `(i  1 e 2 0 ]
 {
-"267
+"346
 } 0
-"169
+"262
+[v _Setup Setup `(v  1 e 1 0 ]
+{
+[v Setup@song song `i  1 p 2 96 ]
+"311
+} 0
+"200
 [v _SetupTimer SetupTimer `(v  1 e 1 0 ]
 {
-"178
+"209
 } 0
-"145
+"176
 [v _SetupClock SetupClock `(v  1 e 1 0 ]
 {
-"148
+"179
 } 0
-"212
+"243
 [v _PWM_Start PWM_Start `(v  1 e 1 0 ]
 {
-"219
+"250
 } 0
-"207
+"238
 [v _PWM_Mode_On PWM_Mode_On `(v  1 e 1 0 ]
 {
-"210
+"241
 } 0
-"189
+"220
 [v _PWM_Init PWM_Init `(v  1 e 1 0 ]
 {
 [v PWM_Init@desired_frequency desired_frequency `l  1 p 4 14 ]
-"192
+"223
 } 0
-"198
+"229
 [v _PWM_Duty PWM_Duty `(v  1 e 1 0 ]
 {
 [v PWM_Duty@duty duty `ui  1 p 2 92 ]
-"205
+"236
 } 0
 "10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -369,17 +394,17 @@
 "8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S820 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S849 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S825 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S828 . 4 `l 1 i 4 0 `d 1 f 4 0 `S820 1 fAsBytes 4 0 `S825 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S828  1 a 4 76 ]
+[s S854 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S857 . 4 `l 1 i 4 0 `d 1 f 4 0 `S849 1 fAsBytes 4 0 `S854 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S857  1 a 4 76 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 70 ]
-[s S896 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S925 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S899 . 2 `s 1 i 2 0 `us 1 n 2 0 `S896 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S899  1 a 2 80 ]
+[u S928 . 2 `s 1 i 2 0 `us 1 n 2 0 `S925 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S928  1 a 2 80 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 75 ]
 "11
@@ -411,10 +436,10 @@
 [v ___fldiv@a a `d  1 p 4 36 ]
 "185
 } 0
-"194 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"225 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v _PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
 {
-"196
+"227
 } 0
 "7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
@@ -429,15 +454,15 @@
 [v ___aldiv@divisor divisor `l  1 p 4 4 ]
 "41
 } 0
-"150 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"181 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v _CalcSpeed CalcSpeed `(i  1 e 2 0 ]
 {
-"151
+"182
 [v CalcSpeed@tmp tmp `i  1 a 2 10 ]
-"150
+"181
 [v CalcSpeed@beat beat `i  1 p 2 6 ]
 [v CalcSpeed@pos pos `i  1 p 2 8 ]
-"167
+"198
 } 0
 "15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -449,14 +474,14 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"269 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"348 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v _HI_ISR HI_ISR `IIH(v  1 e 1 0 ]
 {
-"320
-[v HI_ISR@beat_517 beat `i  1 a 2 106 ]
-"283
-[v HI_ISR@beat beat `i  1 a 2 104 ]
-"333
+"407
+[v HI_ISR@beat_546 beat `i  1 a 2 110 ]
+"372
+[v HI_ISR@beat beat `i  1 a 2 108 ]
+"420
 } 0
 "15 /opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
@@ -466,22 +491,22 @@
 [v i2___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"226 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"257 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v _playTone playTone `(v  1 e 1 0 ]
 {
-"229
+"260
 } 0
-"189
+"220
 [v i2_PWM_Init PWM_Init `(v  1 e 1 0 ]
 {
 [v i2PWM_Init@desired_frequency desired_frequency `l  1 p 4 14 ]
-"192
+"223
 } 0
-"198
+"229
 [v i2_PWM_Duty PWM_Duty `(v  1 e 1 0 ]
 {
 [v i2PWM_Duty@duty duty `ui  1 p 2 92 ]
-"205
+"236
 } 0
 "10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -506,14 +531,14 @@
 "8 /opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
 [v i2___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S820 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-[s S825 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S828 . 4 `l 1 i 4 0 `d 1 f 4 0 `S820 1 fAsBytes 4 0 `S825 1 fAsWords 4 0 ]
-[v i2___flmul@prod __flmul `S828  1 a 4 76 ]
+[s S849 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S854 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S857 . 4 `l 1 i 4 0 `d 1 f 4 0 `S849 1 fAsBytes 4 0 `S854 1 fAsWords 4 0 ]
+[v i2___flmul@prod __flmul `S857  1 a 4 76 ]
 [v i2___flmul@grs __flmul `ul  1 a 4 70 ]
-[s S896 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-[u S899 . 2 `s 1 i 2 0 `us 1 n 2 0 `S896 1 nAsBytes 2 0 ]
-[v i2___flmul@temp __flmul `S899  1 a 2 80 ]
+[s S925 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[u S928 . 2 `s 1 i 2 0 `us 1 n 2 0 `S925 1 nAsBytes 2 0 ]
+[v i2___flmul@temp __flmul `S928  1 a 2 80 ]
 [v i2___flmul@bexp __flmul `uc  1 a 1 75 ]
 [v i2___flmul@aexp __flmul `uc  1 a 1 74 ]
 [v i2___flmul@sign __flmul `uc  1 a 1 69 ]
@@ -534,10 +559,10 @@
 [v i2___fldiv@a a `d  1 p 4 36 ]
 "185
 } 0
-"194 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"225 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 [v i2_PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
 {
-"196
+"227
 } 0
 "7 /opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 [v i2___aldiv __aldiv `(l  1 e 4 0 ]

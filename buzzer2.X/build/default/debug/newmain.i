@@ -4569,7 +4569,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 90 "newmain.c"
+# 89 "newmain.c"
 int led_cycle = 0;
 int led2_cycle = 0;
 int tmr3_cycle = 1;
@@ -4581,7 +4581,27 @@ int MELODY_PTR2;
 
 int current_tone = 0;
 int current_tone_duration = 0;
-int note_change;
+int isRunning = 0;
+int *wm_1;
+char *wb_1;
+int *wm_2;
+char *wb_2;
+
+const int melody4[] = {
+    261,261,784,784,880,880,784,349,349,329,329,293,293,261
+};
+const char beats4[] = {
+    8,8,8,8,8,8,4,8,8,8,8,8,8,4
+};
+
+const int melody3[] = {
+    587,587,659,523,523,659, 493,0,659,0,440,0,659,0, 587,587,659,523,523,659, 493,0,659,0,440,0,
+};
+
+const char beats3[] = {
+    4,8,8,4,8,8, 8,8,8,8,8,8,8,8, 4,8,8,4,8,8, 8,8,8,8,4,4
+};
+
 const int melody2[] = {523,466, 440,698,698,523,440, 466,698,698,698,784, 698,523,523,523,466,466,466,440,466,466,523,523,
                     523,523,523,523,466, 440,698,698,523,440, 466,784,784,880,932, 1046,698,698,587,523,698,659,698,698, 698,0,523,880,880,784,
                     0,587,698,587,880,587,698,587, 0,587,698,587,880,784,698,784, 0,698,784,698,784,698,784,698,784,698,784,698,784,880,
@@ -4609,15 +4629,27 @@ const int melody[] = {0,0, 349, 349, 349, 392,
                        349,440,440,392,349, 349,392,0, 392,440, 466,523,
                        293,293,466,466,466,466,466,466,466,466,466,466,466,466,
                        293,293,440,440,440,440,440,440,440,440,440,440,440,440,
-                       0, 0,523,587,523,440, 0,440,523,880,523,880,523,880, 0,440,523,880,523,523,440,392
-                        };
+                       523,0,392,349,329, 0,523,587,523,440, 0,440,523,880,523,880,523,880, 0,440,523,880,523,523,440,392,
+                       392,440, 466,466,0,293,349,392,349, 349,349,392,349,349,349,466, 349,329,293,261,261,261,349,
+                       349,349,349,440,293,293, 293,440,392,392,440,261, 261,261,261,261,261,261,261,261,261, 349,349,349,349,349,349,261,261,261,523,
+                       349,349,293,293,261,261,261,349, 261,261,261,261,261,261,261,440,392,349, 349,349,329,349,349,440,466, 349,329,261,329,261,261,261,392,349,
+                       349,349,349,349,293,293, 293,440,392,392,440,329, 261,261,261,261,261,261,261,261,261,
+                       261,261,261,261,261,349,261,261,261,523, 349,349,293,293,261,261,349, 261,261,261,261,261,261,261,440,261,349, 349,
+                       349
+};
 const char beats[] = {8,16, 1, 1, 1, 1,
                        4,2,8,16,16, 4,2,4, 2,2, 2,2,
                        8,8,16,16,16,16,16,16,16,16,16,16,16,16,
                        8,8,16,16,16,16,16,16,16,16,16,16,16,16,
-                       1, 2,4,8,16,16, 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8
+                       2,8,16,16,4, 2,4,8,16,16, 4,16,8,16,8,16,6,8, 4,16,8,16,8,16,6,8,
+                       2,2, 2,8,16,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
+                       4,4,8,16,8,6, 8,16,8,8,16,2, 8,16,16,8,16,8,8,4,16, 16,16,16,16,8,16,8,8,6,8,
+                       4,8,16,16,4,8,16,16, 16,16,8,8,16,4,16,8,16,16, 4,8,16,6,4,16,16, 8,16,8,8,4,16,8,16,16,
+                       4,4,8,16,8,6, 8,16,8,8,16,2, 8,16,16,8,16,8,8,4,16,
+                       16,16,16,16,8,16,8,8,6,8, 4,8,16,16,4,8,16,16, 16,16,16,8,8,16,8,8,8,8, 1,
+                       1
                         };
-# 145 "newmain.c"
+# 176 "newmain.c"
 void SetupClock() {
     OSCCONbits.IRCF = 0b110;
     OSCCONbits.SCS = 0b00;
@@ -4652,7 +4684,7 @@ void SetupTimer() {
     INTCONbits.PEIE = 1;
     led_cycle = 0;
 }
-# 189 "newmain.c"
+# 220 "newmain.c"
 void PWM_Init(long desired_frequency) {
     PR2 = (4000000 / (desired_frequency * 4 * 16)) - 1;
     current_tone = desired_frequency;
@@ -4695,7 +4727,8 @@ void playTone() {
     PWM_Duty(512);
 }
 
-int main(int argc, char** argv) {
+void Setup(int song) {
+
     TRISCbits.TRISC1 = 0;
     CCP2CON = 0x02;
     PIR2bits.CCP2IF = 0;
@@ -4704,12 +4737,32 @@ int main(int argc, char** argv) {
     CCPR2 = 1000;
     T3CONbits.TMR3ON = 1;
 
+    if (song == 0) {
+        wm_1 = melody;
+        wb_1 = beats;
+        wm_2 = melody2;
+        wb_2 = beats2;
+        MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
+        MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
+    }
+    else if (song == 1){
+        wm_1 = melody3;
+        wb_1 = beats3;
+        wm_2 = melody3;
+        wb_2 = beats3;
+        MELODY_LENGTH = sizeof (melody3) / sizeof (melody3[0]);
+        MELODY_LENGTH2 = sizeof (melody3) / sizeof (melody3[0]);
+    }
+    else {
+        wm_1 = melody4;
+        wb_1 = beats4;
+        wm_2 = melody4;
+        wb_2 = beats4;
+        MELODY_LENGTH = sizeof (melody4) / sizeof (melody4[0]);
+        MELODY_LENGTH2 = sizeof (melody4) / sizeof (melody4[0]);
+    }
 
-    TRISDbits.TRISD0 = 0;
-
-    MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
     MELODY_PTR = 0;
-    MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
     MELODY_PTR2 = 0;
 
     CalcSpeed(16, 0);
@@ -4723,8 +4776,35 @@ int main(int argc, char** argv) {
     PWM_Init(500);
     PWM_Duty(0);
     PWM_Start();
+}
+
+int main(int argc, char** argv) {
+
+    TRISDbits.TRISD0 = 1;
+    TRISDbits.TRISD1 = 1;
+    PORTDbits.RD0 = 0;
+    PORTDbits.RD1 = 0;
 
     while (1) {
+        if (PORTDbits.RD0 == 0 && PORTDbits.RD1 == 0) {
+            isRunning = 0;
+            TRISCbits.TRISC0 = 1;
+            TRISCbits.TRISC1 = 1;
+            INTCONbits.TMR0IE = 1;
+            PWM_Duty(0);
+        }
+        if (!isRunning && PORTDbits.RD0 == 1 && PORTDbits.RD1 == 0) {
+            isRunning = 1;
+            Setup(0);
+        }
+        else if (!isRunning && PORTDbits.RD1 == 1 && PORTDbits.RD0 == 0) {
+            isRunning = 1;
+            Setup(1);
+        }
+        else if (!isRunning && PORTDbits.RD0 == 1 && PORTDbits.RD1 == 1) {
+            isRunning = 1;
+            Setup(2);
+        }
         if (PIR2bits.CCP2IF) {
             PIR2bits.CCP2IF = 0;
             TMR3 = 0;
@@ -4736,18 +4816,28 @@ int main(int argc, char** argv) {
 void __attribute__((picinterrupt("high_priority"))) HI_ISR(void) {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        LATDbits.LATD2 ^= 1;
         TMR0 = 0xF1;
+
+        if (MELODY_PTR >= MELODY_LENGTH && MELODY_PTR2 >= MELODY_LENGTH2) {
+            MELODY_PTR = 0;
+            MELODY_PTR2 = 0;
+            led_cycle = 0;
+            led2_cycle = 0;
+
+            isRunning = 0;
+            TRISCbits.TRISC0 = 1;
+            TRISCbits.TRISC1 = 1;
+            INTCONbits.TMR0IE = 1;
+            PWM_Duty(0);
+        }
 
         ++led_cycle;
         ++led2_cycle;
-        if (led_cycle >= tmr1_cycle) {
+        if (led_cycle >= tmr1_cycle && MELODY_PTR < MELODY_LENGTH) {
             ++MELODY_PTR;
 
-            if (MELODY_PTR >= MELODY_LENGTH) MELODY_PTR = 0;
-
-            current_tone = melody[MELODY_PTR];
-            int beat = beats[MELODY_PTR];
+            current_tone = wm_1[MELODY_PTR];
+            int beat = wb_1[MELODY_PTR];
             if (beat == 1) tmr1_cycle = 48;
             else if (beat == 2) tmr1_cycle = 24;
             else if (beat == 4) tmr1_cycle = 12;
@@ -4755,7 +4845,7 @@ void __attribute__((picinterrupt("high_priority"))) HI_ISR(void) {
             else if (beat == 8) tmr1_cycle = 6;
             else if (beat == 16) tmr1_cycle = 3;
             tmr1_cycle *= 10;
-            if (melody[MELODY_PTR] == 0) {
+            if (wm_1[MELODY_PTR] == 0) {
                 TRISCbits.TRISC0 = 1;
             }
             else {
@@ -4767,24 +4857,22 @@ void __attribute__((picinterrupt("high_priority"))) HI_ISR(void) {
             led_cycle = 0;
         }
 
-        if (led2_cycle >= tmr3_cycle) {
+        if (led2_cycle >= tmr3_cycle && MELODY_PTR2 < MELODY_LENGTH2) {
             ++MELODY_PTR2;
 
-            if (MELODY_PTR2 >= MELODY_LENGTH2) MELODY_PTR2 = 0;
 
 
-
-            CCPR2 = 1000000/melody2[MELODY_PTR2];
-            if (melody2[MELODY_PTR2] == 0) {
+            CCPR2 = 1000000/wm_2[MELODY_PTR2];
+            if (wm_2[MELODY_PTR2] == 0) {
                 TRISCbits.TRISC1 = 1;
                 CCPR2 = 0;
             }
             else {
                 TRISCbits.TRISC1 = 0;
-                CCPR2 = 1000000/melody2[MELODY_PTR2];
+                CCPR2 = 1000000/wm_2[MELODY_PTR2];
             }
 
-            int beat = beats2[MELODY_PTR2];
+            int beat = wb_2[MELODY_PTR2];
             if (beat == 1) tmr3_cycle = 48;
             else if (beat == 2) tmr3_cycle = 24;
             else if (beat == 4) tmr3_cycle = 12;
