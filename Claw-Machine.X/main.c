@@ -68,8 +68,17 @@
  * RC6, RC7 -> CLK/DIO for seven-segment display
  */
 
+#define MOTOR_X_1 PortDbits.RD0
+#define MOTOR_X_2 PortDbits.RD1
+#define MOTOR_Y_1 PortDbits.RD2
+#define MOTOR_Y_2 PortDbots.RD3
+#define MOTOR_Z_1 PortDbits.RD4 // now useless
+#define MOTOR_Z_2 PortDbits.RD5 // now useless
+
 int NUMBER; // for seven-segment display
 int SENSOR_X, SENSOR_Y;
+int SENSITIVE = 200;
+
 
 void main(void) {
     IRConfig();
@@ -78,6 +87,8 @@ void main(void) {
     ADCConfig();
     // start first adc conversion
     ADCON0bits.GO = 1;
+    // config motor to output
+    TRISDbits.RD0 = TRISDbits.RD1 = TRISDbits.RD2 = TRISDbits.RD3 = 0;
     while (1);
     return;
 }
@@ -101,6 +112,23 @@ void __interrupt(high_priority) HI_ISR(void) {
         }
         ADCON0bits.CHS =  1 - ADCON0bits.CHS;
         ADCON0bits.GO = 1;
+        // turn on motor when result is large enough
+        if (SENSOR_Y > 1024 - SENSITIVE) {
+            MOTOR_Y_1 = 1;
+            MOTOR_Y_2 = 0;
+        }
+        if (SENSOR_Y < SENSITIVE) {
+            MOTOR_Y_1 = 0;
+            MOTOR_Y_2 = 1;
+        }
+        if (SENSOR_X > 1024 - SENSITIVE) {
+            MOTOR_X_1 = 1;
+            MOTOR_X_2 = 0;
+        }
+        if (SENSOR_X < SENSITIVE) {
+            MOTOR_X_1 = 0;
+            MOTOR_X_2 = 1;
+        }
     }
 
 }
