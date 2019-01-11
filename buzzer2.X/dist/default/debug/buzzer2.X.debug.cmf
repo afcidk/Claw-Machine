@@ -49,7 +49,7 @@ intcode CODE 0 8 8 6 1
 dataCOMRAM COMRAM 1 7B 7B 4 1
 bssCOMRAM COMRAM 1 71 71 A 1
 mediumconst MEDIUMCONST 0 77E2 77E2 5DE 1
-$/tmp/xcXXUybH3.o
+$/tmp/xcXhcQo6P.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -927,42 +927,42 @@ FF4 text11 CODE >103:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
 1F42 text0 CODE >343:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 1F46 text0 CODE >344:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 1F4A text0 CODE >346:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
-2604 cinit CODE >1631:/tmp/xcXHRfg3U
-2604 cinit CODE >1633:/tmp/xcXHRfg3U
-2604 cinit CODE >1636:/tmp/xcXHRfg3U
-2604 cinit CODE >1703:/tmp/xcXHRfg3U
-2606 cinit CODE >1704:/tmp/xcXHRfg3U
-2608 cinit CODE >1705:/tmp/xcXHRfg3U
-260A cinit CODE >1706:/tmp/xcXHRfg3U
-260C cinit CODE >1707:/tmp/xcXHRfg3U
-260E cinit CODE >1708:/tmp/xcXHRfg3U
-2610 cinit CODE >1709:/tmp/xcXHRfg3U
-2614 cinit CODE >1710:/tmp/xcXHRfg3U
-2618 cinit CODE >1711:/tmp/xcXHRfg3U
-2618 cinit CODE >1712:/tmp/xcXHRfg3U
-261A cinit CODE >1713:/tmp/xcXHRfg3U
-261E cinit CODE >1714:/tmp/xcXHRfg3U
-2620 cinit CODE >1715:/tmp/xcXHRfg3U
-2622 cinit CODE >1716:/tmp/xcXHRfg3U
-2624 cinit CODE >1720:/tmp/xcXHRfg3U
-2628 cinit CODE >1721:/tmp/xcXHRfg3U
-262A cinit CODE >1722:/tmp/xcXHRfg3U
-262A cinit CODE >1723:/tmp/xcXHRfg3U
-262C cinit CODE >1724:/tmp/xcXHRfg3U
-262E cinit CODE >1725:/tmp/xcXHRfg3U
-2630 cinit CODE >1728:/tmp/xcXHRfg3U
-2634 cinit CODE >1729:/tmp/xcXHRfg3U
-2636 cinit CODE >1730:/tmp/xcXHRfg3U
-2636 cinit CODE >1731:/tmp/xcXHRfg3U
-2638 cinit CODE >1732:/tmp/xcXHRfg3U
-263A cinit CODE >1733:/tmp/xcXHRfg3U
-263C cinit CODE >1739:/tmp/xcXHRfg3U
-263C cinit CODE >1741:/tmp/xcXHRfg3U
-263E cinit CODE >1742:/tmp/xcXHRfg3U
-2640 cinit CODE >1744:/tmp/xcXHRfg3U
-2642 cinit CODE >1745:/tmp/xcXHRfg3U
-2644 cinit CODE >1746:/tmp/xcXHRfg3U
-2646 cinit CODE >1747:/tmp/xcXHRfg3U
+2604 cinit CODE >1631:/tmp/xcXNcFmtR
+2604 cinit CODE >1633:/tmp/xcXNcFmtR
+2604 cinit CODE >1636:/tmp/xcXNcFmtR
+2604 cinit CODE >1703:/tmp/xcXNcFmtR
+2606 cinit CODE >1704:/tmp/xcXNcFmtR
+2608 cinit CODE >1705:/tmp/xcXNcFmtR
+260A cinit CODE >1706:/tmp/xcXNcFmtR
+260C cinit CODE >1707:/tmp/xcXNcFmtR
+260E cinit CODE >1708:/tmp/xcXNcFmtR
+2610 cinit CODE >1709:/tmp/xcXNcFmtR
+2614 cinit CODE >1710:/tmp/xcXNcFmtR
+2618 cinit CODE >1711:/tmp/xcXNcFmtR
+2618 cinit CODE >1712:/tmp/xcXNcFmtR
+261A cinit CODE >1713:/tmp/xcXNcFmtR
+261E cinit CODE >1714:/tmp/xcXNcFmtR
+2620 cinit CODE >1715:/tmp/xcXNcFmtR
+2622 cinit CODE >1716:/tmp/xcXNcFmtR
+2624 cinit CODE >1720:/tmp/xcXNcFmtR
+2628 cinit CODE >1721:/tmp/xcXNcFmtR
+262A cinit CODE >1722:/tmp/xcXNcFmtR
+262A cinit CODE >1723:/tmp/xcXNcFmtR
+262C cinit CODE >1724:/tmp/xcXNcFmtR
+262E cinit CODE >1725:/tmp/xcXNcFmtR
+2630 cinit CODE >1728:/tmp/xcXNcFmtR
+2634 cinit CODE >1729:/tmp/xcXNcFmtR
+2636 cinit CODE >1730:/tmp/xcXNcFmtR
+2636 cinit CODE >1731:/tmp/xcXNcFmtR
+2638 cinit CODE >1732:/tmp/xcXNcFmtR
+263A cinit CODE >1733:/tmp/xcXNcFmtR
+263C cinit CODE >1739:/tmp/xcXNcFmtR
+263C cinit CODE >1741:/tmp/xcXNcFmtR
+263E cinit CODE >1742:/tmp/xcXNcFmtR
+2640 cinit CODE >1744:/tmp/xcXNcFmtR
+2642 cinit CODE >1745:/tmp/xcXNcFmtR
+2644 cinit CODE >1746:/tmp/xcXNcFmtR
+2646 cinit CODE >1747:/tmp/xcXNcFmtR
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -986,14 +986,14 @@ CalcSpeed@pos 88 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 CalcSpeed@tmp 8A 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 _led_cycle F3 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug/buzzer2.X.debug.o
-__mediumconst 77E2 0 MEDIUMCONST 0 mediumconst /tmp/xcXXUybH3.o
+__mediumconst 77E2 0 MEDIUMCONST 0 mediumconst /tmp/xcXhcQo6P.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug/buzzer2.X.debug.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug/buzzer2.X.debug.o
 _LATC F8B 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 _TMR0 FD6 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 _TMR3 FB2 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
-___sp 0 0 STACK 2 stack /tmp/xcXXUybH3.o
+___sp 0 0 STACK 2 stack /tmp/xcXhcQo6P.o
 _main 1E02 0 CODE 0 text0 dist/default/debug/buzzer2.X.debug.o
 _wb_1 E9 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
 _wb_2 E7 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
@@ -1001,7 +1001,7 @@ _wm_1 EB 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
 _wm_2 79 0 COMRAM 1 bssCOMRAM dist/default/debug/buzzer2.X.debug.o
 btemp 7F 0 COMRAM 1 temp dist/default/debug/buzzer2.X.debug.o
 __end_of_CalcSpeed 22E0 0 CODE 0 text14 dist/default/debug/buzzer2.X.debug.o
-start E 0 CODE 0 init /tmp/xcXXUybH3.o
+start E 0 CODE 0 init /tmp/xcXhcQo6P.o
 ___flmul@aexp CA 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___flmul@bexp CB 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___flmul@prod CC 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
@@ -1028,11 +1028,11 @@ ttemp6 83 0 COMRAM 1 temp dist/default/debug/buzzer2.X.debug.o
 ttemp7 87 0 COMRAM 1 temp dist/default/debug/buzzer2.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug/buzzer2.X.debug.o
 __end_ofi2_PWM_Max_Duty 2604 0 CODE 0 text25 dist/default/debug/buzzer2.X.debug.o
-__accesstop 80 0 ABS 0 - /tmp/xcXXUybH3.o
-intlevel0 0 0 CODE 0 text /tmp/xcXXUybH3.o
-intlevel1 0 0 CODE 0 text /tmp/xcXXUybH3.o
-intlevel2 0 0 CODE 0 text /tmp/xcXXUybH3.o
-intlevel3 0 0 CODE 0 text /tmp/xcXXUybH3.o
+__accesstop 80 0 ABS 0 - /tmp/xcXhcQo6P.o
+intlevel0 0 0 CODE 0 text /tmp/xcXhcQo6P.o
+intlevel1 0 0 CODE 0 text /tmp/xcXhcQo6P.o
+intlevel2 0 0 CODE 0 text /tmp/xcXhcQo6P.o
+intlevel3 0 0 CODE 0 text /tmp/xcXhcQo6P.o
 __size_of_PWM_Mode_On 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __end_ofi2___xxtofl 1A06 0 CODE 0 text21 dist/default/debug/buzzer2.X.debug.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug/buzzer2.X.debug.o
@@ -1057,8 +1057,8 @@ __Hclrtext 0 0 ABS 0 clrtext dist/default/debug/buzzer2.X.debug.o
 __pidataCOMRAM 26FE 0 CODE 0 idataCOMRAM dist/default/debug/buzzer2.X.debug.o
 ___wmul@multiplicand 82 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 i2___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/debug/buzzer2.X.debug.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXXUybH3.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXXUybH3.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXhcQo6P.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXhcQo6P.o
 __size_ofi2___wmul 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug/buzzer2.X.debug.o
 _CCP1M2 7DEA 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
@@ -1148,7 +1148,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/debug/buzzer2.X.debug.o
 __size_of___xxtofl 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug/buzzer2.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug/buzzer2.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXXUybH3.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXhcQo6P.o
 ___xxtofl@arg 9C 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___xxtofl@exp 9B 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___xxtofl@val 92 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
@@ -1305,8 +1305,8 @@ __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug/buzzer2.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug/buzzer2.X.debug.o
 ___fldiv@new_exp B1 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 _tmr1_cycle 7B 0 COMRAM 1 dataCOMRAM dist/default/debug/buzzer2.X.debug.o
-stackhi 5F3 0 ABS 0 - /tmp/xcXXUybH3.o
-stacklo F7 0 ABS 0 - /tmp/xcXXUybH3.o
+stackhi 5F3 0 ABS 0 - /tmp/xcXhcQo6P.o
+stacklo F7 0 ABS 0 - /tmp/xcXhcQo6P.o
 __Lintcode 8 0 CODE 0 intcode dist/default/debug/buzzer2.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug/buzzer2.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug/buzzer2.X.debug.o
@@ -1381,7 +1381,7 @@ __Ltext23 0 0 ABS 0 text23 dist/default/debug/buzzer2.X.debug.o
 __Ltext24 0 0 ABS 0 text24 dist/default/debug/buzzer2.X.debug.o
 __Ltext25 0 0 ABS 0 text25 dist/default/debug/buzzer2.X.debug.o
 __Ltext26 0 0 ABS 0 text26 dist/default/debug/buzzer2.X.debug.o
-__ramtop 600 0 RAM 0 ramtop /tmp/xcXXUybH3.o
+__ramtop 600 0 RAM 0 ramtop /tmp/xcXhcQo6P.o
 ___aldiv@dividend 80 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 __Lpowerup E 0 CODE 0 powerup dist/default/debug/buzzer2.X.debug.o
 ?___xxtofl 92 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o

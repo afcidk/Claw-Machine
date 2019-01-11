@@ -4,6 +4,7 @@
 void TTConfig(void);
 void TTturn(void);
 void _TTPinConfig(void);
+void _CollConfig(void);
 
 #endif	/* TT_H */
 
