@@ -62,18 +62,19 @@
 #include "modules/XYSensor.h"
 
 /* occupied pin or interrupt
+ * RA0, RA1 -> analog input 
  * RB0 -> infrared
  * RB1 -> micro switch for coin detection
- * RD0~RD3 -> motor
+ * RD0~RD5 -> motor
  * RC6, RC7 -> CLK/DIO for seven-segment display
  */
 
-#define MOTOR_X_1 PortDbits.RD0
-#define MOTOR_X_2 PortDbits.RD1
-#define MOTOR_Y_1 PortDbits.RD2
-#define MOTOR_Y_2 PortDbots.RD3
-#define MOTOR_Z_1 PortDbits.RD4 // now useless
-#define MOTOR_Z_2 PortDbits.RD5 // now useless
+#define MOTOR_X_1 PORTDbits.RD0
+#define MOTOR_X_2 PORTDbits.RD1
+#define MOTOR_Y_1 PORTDbits.RD2
+#define MOTOR_Y_2 PORTDbits.RD3
+#define MOTOR_Z_1 PORTDbits.RD4 // now useless
+#define MOTOR_Z_2 PORTDbits.RD5 // now useless
 
 int NUMBER; // for seven-segment display
 int SENSOR_X, SENSOR_Y;
@@ -101,7 +102,7 @@ void __interrupt(high_priority) HI_ISR(void) {
     }
     else if (INTCON3bits.INT1IF) { // micro switch for seven-segment display
         INTCON3bits.INT1IF = 0;
-        NUMBER += 10;
+        NUMBER += 5; //need to divide by 2 (bug???)
         Display(NUMBER);
     } else if (PIR1bits.ADIF) { // XY Sensor ADC convertor interrupt
         PIR1bits.ADIF = 0;
@@ -117,17 +118,24 @@ void __interrupt(high_priority) HI_ISR(void) {
             MOTOR_Y_1 = 1;
             MOTOR_Y_2 = 0;
         }
-        if (SENSOR_Y < SENSITIVE) {
+        else if (SENSOR_Y < SENSITIVE) {
             MOTOR_Y_1 = 0;
             MOTOR_Y_2 = 1;
         }
+        else {
+            MOTOR_Y_1 = MOTOR_Y_2 = 0;
+        }
+        
         if (SENSOR_X > 1024 - SENSITIVE) {
             MOTOR_X_1 = 1;
             MOTOR_X_2 = 0;
         }
-        if (SENSOR_X < SENSITIVE) {
+        else if (SENSOR_X < SENSITIVE) {
             MOTOR_X_1 = 0;
             MOTOR_X_2 = 1;
+        }
+        else {
+            MOTOR_X_1 = MOTOR_X_2 = 0;
         }
     }
 

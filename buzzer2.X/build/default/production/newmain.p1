@@ -697,59 +697,182 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "56
 [p x EBTRB = OFF ]
-"90
-[; ;newmain.c: 90: int led_cycle = 0;
+"89
+[; ;newmain.c: 89: int led_cycle = 0;
 [v _led_cycle `i ~T0 @X0 1 e ]
 [i _led_cycle
 -> 0 `i
 ]
-"91
-[; ;newmain.c: 91: int led2_cycle = 0;
+"90
+[; ;newmain.c: 90: int led2_cycle = 0;
 [v _led2_cycle `i ~T0 @X0 1 e ]
 [i _led2_cycle
 -> 0 `i
 ]
-"92
-[; ;newmain.c: 92: int tmr3_cycle = 1;
+"91
+[; ;newmain.c: 91: int tmr3_cycle = 1;
 [v _tmr3_cycle `i ~T0 @X0 1 e ]
 [i _tmr3_cycle
 -> 1 `i
 ]
-"93
-[; ;newmain.c: 93: int tmr1_cycle = 1;
+"92
+[; ;newmain.c: 92: int tmr1_cycle = 1;
 [v _tmr1_cycle `i ~T0 @X0 1 e ]
 [i _tmr1_cycle
 -> 1 `i
 ]
-"94
-[; ;newmain.c: 94: int MELODY_LENGTH;
+"93
+[; ;newmain.c: 93: int MELODY_LENGTH;
 [v _MELODY_LENGTH `i ~T0 @X0 1 e ]
-"95
-[; ;newmain.c: 95: int MELODY_PTR;
+"94
+[; ;newmain.c: 94: int MELODY_PTR;
 [v _MELODY_PTR `i ~T0 @X0 1 e ]
-"96
-[; ;newmain.c: 96: int MELODY_LENGTH2;
+"95
+[; ;newmain.c: 95: int MELODY_LENGTH2;
 [v _MELODY_LENGTH2 `i ~T0 @X0 1 e ]
-"97
-[; ;newmain.c: 97: int MELODY_PTR2;
+"96
+[; ;newmain.c: 96: int MELODY_PTR2;
 [v _MELODY_PTR2 `i ~T0 @X0 1 e ]
-"99
-[; ;newmain.c: 99: int current_tone = 0;
+"98
+[; ;newmain.c: 98: int current_tone = 0;
 [v _current_tone `i ~T0 @X0 1 e ]
 [i _current_tone
 -> 0 `i
 ]
-"100
-[; ;newmain.c: 100: int current_tone_duration = 0;
+"99
+[; ;newmain.c: 99: int current_tone_duration = 0;
 [v _current_tone_duration `i ~T0 @X0 1 e ]
 [i _current_tone_duration
 -> 0 `i
 ]
+"100
+[; ;newmain.c: 100: int isRunning = 0;
+[v _isRunning `i ~T0 @X0 1 e ]
+[i _isRunning
+-> 0 `i
+]
 "101
-[; ;newmain.c: 101: int note_change;
-[v _note_change `i ~T0 @X0 1 e ]
+[; ;newmain.c: 101: int *wm_1;
+[v _wm_1 `*i ~T0 @X0 1 e ]
 "102
-[; ;newmain.c: 102: const int melody2[] = {523,466, 440,698,698,523,440, 466,698,698,698,784, 698,523,523,523,466,466,466,440,466,466,523,523,
+[; ;newmain.c: 102: char *wb_1;
+[v _wb_1 `*uc ~T0 @X0 1 e ]
+"103
+[; ;newmain.c: 103: int *wm_2;
+[v _wm_2 `*i ~T0 @X0 1 e ]
+"104
+[; ;newmain.c: 104: char *wb_2;
+[v _wb_2 `*uc ~T0 @X0 1 e ]
+"106
+[; ;newmain.c: 106: const int melody4[] = {
+[v _melody4 `Ci ~T0 @X0 -> 14 `i e ]
+[i _melody4
+:U ..
+-> 261 `i
+-> 261 `i
+-> 784 `i
+-> 784 `i
+-> 880 `i
+-> 880 `i
+-> 784 `i
+-> 349 `i
+-> 349 `i
+-> 329 `i
+-> 329 `i
+-> 293 `i
+-> 293 `i
+-> 261 `i
+..
+]
+"109
+[; ;newmain.c: 109: const char beats4[] = {
+[v _beats4 `Cuc ~T0 @X0 -> 14 `i e ]
+[i _beats4
+:U ..
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+..
+]
+"113
+[; ;newmain.c: 113: const int melody3[] = {
+[v _melody3 `Ci ~T0 @X0 -> 26 `i e ]
+[i _melody3
+:U ..
+-> 587 `i
+-> 587 `i
+-> 659 `i
+-> 523 `i
+-> 523 `i
+-> 659 `i
+-> 493 `i
+-> 0 `i
+-> 659 `i
+-> 0 `i
+-> 440 `i
+-> 0 `i
+-> 659 `i
+-> 0 `i
+-> 587 `i
+-> 587 `i
+-> 659 `i
+-> 523 `i
+-> 523 `i
+-> 659 `i
+-> 493 `i
+-> 0 `i
+-> 659 `i
+-> 0 `i
+-> 440 `i
+-> 0 `i
+..
+]
+"117
+[; ;newmain.c: 117: const char beats3[] = {
+[v _beats3 `Cuc ~T0 @X0 -> 26 `i e ]
+[i _beats3
+:U ..
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+..
+]
+"121
+[; ;newmain.c: 121: const int melody2[] = {523,466, 440,698,698,523,440, 466,698,698,698,784, 698,523,523,523,466,466,466,440,466,466,523,523,
 [v _melody2 `Ci ~T0 @X0 -> 249 `i e ]
 [i _melody2
 :U ..
@@ -1004,8 +1127,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ..
 ]
-"113
-[; ;newmain.c: 113: const char beats2[] = {16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,8,16,16,8,16,16,8,16,16,16,
+"132
+[; ;newmain.c: 132: const char beats2[] = {16,16, 4,2,8,16,16, 4,2,8,16,16, 8,16,8,16,16,8,16,16,8,16,16,16,
 [v _beats2 `Cuc ~T0 @X0 -> 249 `i e ]
 [i _beats2
 :U ..
@@ -1260,8 +1383,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 1 `i `uc
 ..
 ]
-"125
-[; ;newmain.c: 125: const int melody[] = {0,0, 349, 349, 349, 392,
+"144
+[; ;newmain.c: 144: const int melody[] = {0,0, 349, 349, 349, 392,
 [v _melody `Ci ~T0 @X0 -> 210 `i e ]
 [i _melody
 :U ..
@@ -1477,8 +1600,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 349 `i
 ..
 ]
-"137
-[; ;newmain.c: 137: const char beats[] = {8,16, 1, 1, 1, 1,
+"156
+[; ;newmain.c: 156: const char beats[] = {8,16, 1, 1, 1, 1,
 [v _beats `Cuc ~T0 @X0 -> 213 `i e ]
 [i _beats
 :U ..
@@ -1697,77 +1820,77 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 1 `i `uc
 ..
 ]
-"157
-[; ;newmain.c: 157: void SetupClock() {
+"176
+[; ;newmain.c: 176: void SetupClock() {
 [v _SetupClock `(v ~T0 @X0 1 ef ]
 {
 [e :U _SetupClock ]
 [f ]
-"158
-[; ;newmain.c: 158:     OSCCONbits.IRCF = 0b110;
+"177
+[; ;newmain.c: 177:     OSCCONbits.IRCF = 0b110;
 [e = . . _OSCCONbits 0 3 -> -> 6 `i `uc ]
-"159
-[; ;newmain.c: 159:     OSCCONbits.SCS = 0b00;
+"178
+[; ;newmain.c: 178:     OSCCONbits.SCS = 0b00;
 [e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
-"160
-[; ;newmain.c: 160: }
+"179
+[; ;newmain.c: 179: }
 [e :UE 281 ]
 }
-"162
-[; ;newmain.c: 162: int CalcSpeed(int beat, int pos) {
+"181
+[; ;newmain.c: 181: int CalcSpeed(int beat, int pos) {
 [v _CalcSpeed `(i ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _CalcSpeed ]
 [v _beat `i ~T0 @X0 1 r1 ]
 [v _pos `i ~T0 @X0 1 r2 ]
 [f ]
-"163
-[; ;newmain.c: 163:     int tmp;
+"182
+[; ;newmain.c: 182:     int tmp;
 [v _tmp `i ~T0 @X0 1 a ]
-"164
-[; ;newmain.c: 164:     if (beat == 1) tmp = 48;
+"183
+[; ;newmain.c: 183:     if (beat == 1) tmp = 48;
 [e $ ! == _beat -> 1 `i 283  ]
 [e = _tmp -> 48 `i ]
 [e $U 284  ]
-"165
-[; ;newmain.c: 165:     else if (beat == 2) tmp = 24;
+"184
+[; ;newmain.c: 184:     else if (beat == 2) tmp = 24;
 [e :U 283 ]
 [e $ ! == _beat -> 2 `i 285  ]
 [e = _tmp -> 24 `i ]
 [e $U 286  ]
-"166
-[; ;newmain.c: 166:     else if (beat == 4) tmp = 12;
+"185
+[; ;newmain.c: 185:     else if (beat == 4) tmp = 12;
 [e :U 285 ]
 [e $ ! == _beat -> 4 `i 287  ]
 [e = _tmp -> 12 `i ]
 [e $U 288  ]
-"167
-[; ;newmain.c: 167:     else if (beat == 6) tmp = 9;
+"186
+[; ;newmain.c: 186:     else if (beat == 6) tmp = 9;
 [e :U 287 ]
 [e $ ! == _beat -> 6 `i 289  ]
 [e = _tmp -> 9 `i ]
 [e $U 290  ]
-"168
-[; ;newmain.c: 168:     else if (beat == 8) tmp = 6;
+"187
+[; ;newmain.c: 187:     else if (beat == 8) tmp = 6;
 [e :U 289 ]
 [e $ ! == _beat -> 8 `i 291  ]
 [e = _tmp -> 6 `i ]
 [e $U 292  ]
-"169
-[; ;newmain.c: 169:     else if (beat == 16) tmp = 3;
+"188
+[; ;newmain.c: 188:     else if (beat == 16) tmp = 3;
 [e :U 291 ]
 [e $ ! == _beat -> 16 `i 293  ]
 [e = _tmp -> 3 `i ]
 [e $U 294  ]
-"170
-[; ;newmain.c: 170:     else {
+"189
+[; ;newmain.c: 189:     else {
 [e :U 293 ]
 {
-"171
-[; ;newmain.c: 171:         tmp = 1;
+"190
+[; ;newmain.c: 190:         tmp = 1;
 [e = _tmp -> 1 `i ]
-"172
-[; ;newmain.c: 172:     }
+"191
+[; ;newmain.c: 191:     }
 }
 [e :U 294 ]
 [e :U 292 ]
@@ -1775,588 +1898,704 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 288 ]
 [e :U 286 ]
 [e :U 284 ]
-"173
-[; ;newmain.c: 173:     tmp *= 10;
+"192
+[; ;newmain.c: 192:     tmp *= 10;
 [e =* _tmp -> 10 `i ]
-"175
-[; ;newmain.c: 175:     if (pos) tmr1_cycle = tmp;
+"194
+[; ;newmain.c: 194:     if (pos) tmr1_cycle = tmp;
 [e $ ! != _pos -> 0 `i 295  ]
 [e = _tmr1_cycle _tmp ]
 [e $U 296  ]
-"176
-[; ;newmain.c: 176:     else tmr3_cycle = tmp;
+"195
+[; ;newmain.c: 195:     else tmr3_cycle = tmp;
 [e :U 295 ]
 [e = _tmr3_cycle _tmp ]
 [e :U 296 ]
-"177
-[; ;newmain.c: 177:     __nop();
+"196
+[; ;newmain.c: 196:     __nop();
 [e ( ___nop ..  ]
-"178
-[; ;newmain.c: 178:     return 0;
+"197
+[; ;newmain.c: 197:     return 0;
 [e ) -> 0 `i ]
 [e $UE 282  ]
-"179
-[; ;newmain.c: 179: }
+"198
+[; ;newmain.c: 198: }
 [e :UE 282 ]
 }
-"181
-[; ;newmain.c: 181: void SetupTimer() {
+"200
+[; ;newmain.c: 200: void SetupTimer() {
 [v _SetupTimer `(v ~T0 @X0 1 ef ]
 {
 [e :U _SetupTimer ]
 [f ]
-"182
-[; ;newmain.c: 182:     T0CON = 0b11010111;
+"201
+[; ;newmain.c: 201:     T0CON = 0b11010111;
 [e = _T0CON -> -> 215 `i `uc ]
-"183
-[; ;newmain.c: 183:     INTCONbits.TMR0IE = 1;
+"202
+[; ;newmain.c: 202:     INTCONbits.TMR0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"184
-[; ;newmain.c: 184:     INTCONbits.TMR0IF = 0;
+"203
+[; ;newmain.c: 203:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"186
-[; ;newmain.c: 186:     RCONbits.IPEN = 1;
+"205
+[; ;newmain.c: 205:     RCONbits.IPEN = 1;
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-"187
-[; ;newmain.c: 187:     INTCONbits.GIE = 1;
+"206
+[; ;newmain.c: 206:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"188
-[; ;newmain.c: 188:     INTCONbits.PEIE = 1;
+"207
+[; ;newmain.c: 207:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"189
-[; ;newmain.c: 189:     led_cycle = 0;
+"208
+[; ;newmain.c: 208:     led_cycle = 0;
 [e = _led_cycle -> 0 `i ]
-"190
-[; ;newmain.c: 190: }
+"209
+[; ;newmain.c: 209: }
 [e :UE 297 ]
 }
-"201
-[; ;newmain.c: 201: void PWM_Init(long desired_frequency) {
+"220
+[; ;newmain.c: 220: void PWM_Init(long desired_frequency) {
 [v _PWM_Init `(v ~T0 @X0 1 ef1`l ]
 {
 [e :U _PWM_Init ]
 [v _desired_frequency `l ~T0 @X0 1 r1 ]
 [f ]
-"202
-[; ;newmain.c: 202:     PR2 = (4000000 / (desired_frequency * 4 * 16)) - 1;
+"221
+[; ;newmain.c: 221:     PR2 = (4000000 / (desired_frequency * 4 * 16)) - 1;
 [e = _PR2 -> - / -> 4000000 `l * * _desired_frequency -> -> 4 `i `l -> -> 16 `i `l -> -> 1 `i `l `uc ]
-"203
-[; ;newmain.c: 203:     current_tone = desired_frequency;
+"222
+[; ;newmain.c: 222:     current_tone = desired_frequency;
 [e = _current_tone -> _desired_frequency `i ]
-"204
-[; ;newmain.c: 204: }
+"223
+[; ;newmain.c: 223: }
 [e :UE 298 ]
 }
-"206
-[; ;newmain.c: 206: int PWM_Max_Duty() {
+"225
+[; ;newmain.c: 225: int PWM_Max_Duty() {
 [v _PWM_Max_Duty `(i ~T0 @X0 1 ef ]
 {
 [e :U _PWM_Max_Duty ]
 [f ]
-"207
-[; ;newmain.c: 207:     return (4000000 / (current_tone * 16));
+"226
+[; ;newmain.c: 226:     return (4000000 / (current_tone * 16));
 [e ) -> / -> 4000000 `l -> * _current_tone -> 16 `i `l `i ]
 [e $UE 299  ]
-"208
-[; ;newmain.c: 208: }
+"227
+[; ;newmain.c: 227: }
 [e :UE 299 ]
 }
-"210
-[; ;newmain.c: 210: void PWM_Duty(unsigned int duty) {
+"229
+[; ;newmain.c: 229: void PWM_Duty(unsigned int duty) {
 [v _PWM_Duty `(v ~T0 @X0 1 ef1`ui ]
 {
 [e :U _PWM_Duty ]
 [v _duty `ui ~T0 @X0 1 r1 ]
 [f ]
-"211
-[; ;newmain.c: 211:     if (duty < 1024) {
+"230
+[; ;newmain.c: 230:     if (duty < 1024) {
 [e $ ! < _duty -> -> 1024 `i `ui 301  ]
 {
-"212
-[; ;newmain.c: 212:         duty = ((float) duty / 1023) * PWM_Max_Duty();
+"231
+[; ;newmain.c: 231:         duty = ((float) duty / 1023) * PWM_Max_Duty();
 [e = _duty -> * / -> _duty `f -> -> 1023 `i `f -> ( _PWM_Max_Duty ..  `f `ui ]
-"213
-[; ;newmain.c: 213:         CCP1X = duty & 2;
+"232
+[; ;newmain.c: 232:         CCP1X = duty & 2;
 [e = _CCP1X -> & _duty -> -> 2 `i `ui `b ]
-"214
-[; ;newmain.c: 214:         CCP1Y = duty & 1;
+"233
+[; ;newmain.c: 233:         CCP1Y = duty & 1;
 [e = _CCP1Y -> & _duty -> -> 1 `i `ui `b ]
-"215
-[; ;newmain.c: 215:         CCPR1L = duty >> 2;
+"234
+[; ;newmain.c: 234:         CCPR1L = duty >> 2;
 [e = _CCPR1L -> >> _duty -> 2 `i `uc ]
-"216
-[; ;newmain.c: 216:     }
+"235
+[; ;newmain.c: 235:     }
 }
 [e :U 301 ]
-"217
-[; ;newmain.c: 217: }
+"236
+[; ;newmain.c: 236: }
 [e :UE 300 ]
 }
-"219
-[; ;newmain.c: 219: void PWM_Mode_On() {
+"238
+[; ;newmain.c: 238: void PWM_Mode_On() {
 [v _PWM_Mode_On `(v ~T0 @X0 1 ef ]
 {
 [e :U _PWM_Mode_On ]
 [f ]
-"220
-[; ;newmain.c: 220:     CCP1M3 = 1;
+"239
+[; ;newmain.c: 239:     CCP1M3 = 1;
 [e = _CCP1M3 -> -> 1 `i `b ]
-"221
-[; ;newmain.c: 221:     CCP1M2 = 1;
+"240
+[; ;newmain.c: 240:     CCP1M2 = 1;
 [e = _CCP1M2 -> -> 1 `i `b ]
-"222
-[; ;newmain.c: 222: }
+"241
+[; ;newmain.c: 241: }
 [e :UE 302 ]
 }
-"224
-[; ;newmain.c: 224: void PWM_Start() {
+"243
+[; ;newmain.c: 243: void PWM_Start() {
 [v _PWM_Start `(v ~T0 @X0 1 ef ]
 {
 [e :U _PWM_Start ]
 [f ]
-"225
-[; ;newmain.c: 225:     PWM_Mode_On();
+"244
+[; ;newmain.c: 244:     PWM_Mode_On();
 [e ( _PWM_Mode_On ..  ]
-"227
-[; ;newmain.c: 227:     T2CKPS0 = 1;
+"246
+[; ;newmain.c: 246:     T2CKPS0 = 1;
 [e = _T2CKPS0 -> -> 1 `i `b ]
-"228
-[; ;newmain.c: 228:     T2CKPS1 = 1;
+"247
+[; ;newmain.c: 247:     T2CKPS1 = 1;
 [e = _T2CKPS1 -> -> 1 `i `b ]
-"230
-[; ;newmain.c: 230:     TMR2ON = 1;
+"249
+[; ;newmain.c: 249:     TMR2ON = 1;
 [e = _TMR2ON -> -> 1 `i `b ]
-"231
-[; ;newmain.c: 231: }
+"250
+[; ;newmain.c: 250: }
 [e :UE 303 ]
 }
-"233
-[; ;newmain.c: 233: void PWM_Stop() {
+"252
+[; ;newmain.c: 252: void PWM_Stop() {
 [v _PWM_Stop `(v ~T0 @X0 1 ef ]
 {
 [e :U _PWM_Stop ]
 [f ]
-"234
-[; ;newmain.c: 234:     CCP1M3 = 0;
+"253
+[; ;newmain.c: 253:     CCP1M3 = 0;
 [e = _CCP1M3 -> -> 0 `i `b ]
-"235
-[; ;newmain.c: 235:     CCP1M2 = 0;
+"254
+[; ;newmain.c: 254:     CCP1M2 = 0;
 [e = _CCP1M2 -> -> 0 `i `b ]
-"236
-[; ;newmain.c: 236: }
+"255
+[; ;newmain.c: 255: }
 [e :UE 304 ]
 }
-"238
-[; ;newmain.c: 238: void playTone() {
+"257
+[; ;newmain.c: 257: void playTone() {
 [v _playTone `(v ~T0 @X0 1 ef ]
 {
 [e :U _playTone ]
 [f ]
-"239
-[; ;newmain.c: 239:     PWM_Init(current_tone);
+"258
+[; ;newmain.c: 258:     PWM_Init(current_tone);
 [e ( _PWM_Init (1 -> _current_tone `l ]
-"240
-[; ;newmain.c: 240:     PWM_Duty(512);
+"259
+[; ;newmain.c: 259:     PWM_Duty(512);
 [e ( _PWM_Duty (1 -> -> 512 `i `ui ]
-"241
-[; ;newmain.c: 241: }
+"260
+[; ;newmain.c: 260: }
 [e :UE 305 ]
 }
-"243
-[; ;newmain.c: 243: void Setup() {
-[v _Setup `(v ~T0 @X0 1 ef ]
+"262
+[; ;newmain.c: 262: void Setup(int song) {
+[v _Setup `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _Setup ]
+[v _song `i ~T0 @X0 1 r1 ]
 [f ]
-"245
-[; ;newmain.c: 245:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-"246
-[; ;newmain.c: 246:     CCP2CON = 0x02;
-[e = _CCP2CON -> -> 2 `i `uc ]
-"247
-[; ;newmain.c: 247:     PIR2bits.CCP2IF = 0;
-[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
-"248
-[; ;newmain.c: 248:     TMR3 = 0;
-[e = _TMR3 -> -> 0 `i `us ]
-"249
-[; ;newmain.c: 249:     T3CON = 0xC0;
-[e = _T3CON -> -> 192 `i `uc ]
-"250
-[; ;newmain.c: 250:     CCPR2 = 1000;
-[e = _CCPR2 -> -> 1000 `i `us ]
-"251
-[; ;newmain.c: 251:     T3CONbits.TMR3ON = 1;
-[e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
-"254
-[; ;newmain.c: 254:     MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
-[e = _MELODY_LENGTH -> / -> # _melody `ui -> # *U + &U _melody * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody `ui `ux `ui `i ]
-"255
-[; ;newmain.c: 255:     MELODY_PTR = 0;
-[e = _MELODY_PTR -> 0 `i ]
-"256
-[; ;newmain.c: 256:     MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
-[e = _MELODY_LENGTH2 -> / -> # _melody2 `ui -> # *U + &U _melody2 * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody2 `ui `ux `ui `i ]
-"257
-[; ;newmain.c: 257:     MELODY_PTR2 = 0;
-[e = _MELODY_PTR2 -> 0 `i ]
-"259
-[; ;newmain.c: 259:     CalcSpeed(16, 0);
-[e ( _CalcSpeed (2 , -> 16 `i -> 0 `i ]
-"260
-[; ;newmain.c: 260:     CalcSpeed(16, 1);
-[e ( _CalcSpeed (2 , -> 16 `i -> 1 `i ]
-"261
-[; ;newmain.c: 261:     SetupClock();
-[e ( _SetupClock ..  ]
-"262
-[; ;newmain.c: 262:     SetupTimer();
-[e ( _SetupTimer ..  ]
 "264
-[; ;newmain.c: 264:     TRISCbits.TRISC2 = 0;
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+[; ;newmain.c: 264:     TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
 "265
-[; ;newmain.c: 265:     LATC = 0;
-[e = _LATC -> -> 0 `i `uc ]
+[; ;newmain.c: 265:     CCP2CON = 0x02;
+[e = _CCP2CON -> -> 2 `i `uc ]
+"266
+[; ;newmain.c: 266:     PIR2bits.CCP2IF = 0;
+[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
 "267
-[; ;newmain.c: 267:     PWM_Init(500);
-[e ( _PWM_Init (1 -> -> 500 `i `l ]
+[; ;newmain.c: 267:     TMR3 = 0;
+[e = _TMR3 -> -> 0 `i `us ]
 "268
-[; ;newmain.c: 268:     PWM_Duty(0);
-[e ( _PWM_Duty (1 -> -> 0 `i `ui ]
+[; ;newmain.c: 268:     T3CON = 0xC0;
+[e = _T3CON -> -> 192 `i `uc ]
 "269
-[; ;newmain.c: 269:     PWM_Start();
-[e ( _PWM_Start ..  ]
+[; ;newmain.c: 269:     CCPR2 = 1000;
+[e = _CCPR2 -> -> 1000 `i `us ]
 "270
-[; ;newmain.c: 270: }
+[; ;newmain.c: 270:     T3CONbits.TMR3ON = 1;
+[e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
+"272
+[; ;newmain.c: 272:     if (song == 0) {
+[e $ ! == _song -> 0 `i 307  ]
+{
+"273
+[; ;newmain.c: 273:         wm_1 = melody;
+[e = _wm_1 -> &U _melody `*i ]
+"274
+[; ;newmain.c: 274:         wb_1 = beats;
+[e = _wb_1 -> &U _beats `*uc ]
+"275
+[; ;newmain.c: 275:         wm_2 = melody2;
+[e = _wm_2 -> &U _melody2 `*i ]
+"276
+[; ;newmain.c: 276:         wb_2 = beats2;
+[e = _wb_2 -> &U _beats2 `*uc ]
+"277
+[; ;newmain.c: 277:         MELODY_LENGTH = sizeof (melody) / sizeof (melody[0]);
+[e = _MELODY_LENGTH -> / -> # _melody `ui -> # *U + &U _melody * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody `ui `ux `ui `i ]
+"278
+[; ;newmain.c: 278:         MELODY_LENGTH2 = sizeof (melody2) / sizeof (melody2[0]);
+[e = _MELODY_LENGTH2 -> / -> # _melody2 `ui -> # *U + &U _melody2 * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody2 `ui `ux `ui `i ]
+"279
+[; ;newmain.c: 279:     }
+}
+[e $U 308  ]
+"280
+[; ;newmain.c: 280:     else if (song == 1){
+[e :U 307 ]
+[e $ ! == _song -> 1 `i 309  ]
+{
+"281
+[; ;newmain.c: 281:         wm_1 = melody3;
+[e = _wm_1 -> &U _melody3 `*i ]
+"282
+[; ;newmain.c: 282:         wb_1 = beats3;
+[e = _wb_1 -> &U _beats3 `*uc ]
+"283
+[; ;newmain.c: 283:         wm_2 = melody3;
+[e = _wm_2 -> &U _melody3 `*i ]
+"284
+[; ;newmain.c: 284:         wb_2 = beats3;
+[e = _wb_2 -> &U _beats3 `*uc ]
+"285
+[; ;newmain.c: 285:         MELODY_LENGTH = sizeof (melody3) / sizeof (melody3[0]);
+[e = _MELODY_LENGTH -> / -> # _melody3 `ui -> # *U + &U _melody3 * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody3 `ui `ux `ui `i ]
+"286
+[; ;newmain.c: 286:         MELODY_LENGTH2 = sizeof (melody3) / sizeof (melody3[0]);
+[e = _MELODY_LENGTH2 -> / -> # _melody3 `ui -> # *U + &U _melody3 * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody3 `ui `ux `ui `i ]
+"287
+[; ;newmain.c: 287:     }
+}
+[e $U 310  ]
+"288
+[; ;newmain.c: 288:     else {
+[e :U 309 ]
+{
+"289
+[; ;newmain.c: 289:         wm_1 = melody4;
+[e = _wm_1 -> &U _melody4 `*i ]
+"290
+[; ;newmain.c: 290:         wb_1 = beats4;
+[e = _wb_1 -> &U _beats4 `*uc ]
+"291
+[; ;newmain.c: 291:         wm_2 = melody4;
+[e = _wm_2 -> &U _melody4 `*i ]
+"292
+[; ;newmain.c: 292:         wb_2 = beats4;
+[e = _wb_2 -> &U _beats4 `*uc ]
+"293
+[; ;newmain.c: 293:         MELODY_LENGTH = sizeof (melody4) / sizeof (melody4[0]);
+[e = _MELODY_LENGTH -> / -> # _melody4 `ui -> # *U + &U _melody4 * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody4 `ui `ux `ui `i ]
+"294
+[; ;newmain.c: 294:         MELODY_LENGTH2 = sizeof (melody4) / sizeof (melody4[0]);
+[e = _MELODY_LENGTH2 -> / -> # _melody4 `ui -> # *U + &U _melody4 * -> -> -> 0 `i `ui `ux -> -> # *U &U _melody4 `ui `ux `ui `i ]
+"295
+[; ;newmain.c: 295:     }
+}
+[e :U 310 ]
+[e :U 308 ]
+"297
+[; ;newmain.c: 297:     MELODY_PTR = 0;
+[e = _MELODY_PTR -> 0 `i ]
+"298
+[; ;newmain.c: 298:     MELODY_PTR2 = 0;
+[e = _MELODY_PTR2 -> 0 `i ]
+"300
+[; ;newmain.c: 300:     CalcSpeed(16, 0);
+[e ( _CalcSpeed (2 , -> 16 `i -> 0 `i ]
+"301
+[; ;newmain.c: 301:     CalcSpeed(16, 1);
+[e ( _CalcSpeed (2 , -> 16 `i -> 1 `i ]
+"302
+[; ;newmain.c: 302:     SetupClock();
+[e ( _SetupClock ..  ]
+"303
+[; ;newmain.c: 303:     SetupTimer();
+[e ( _SetupTimer ..  ]
+"305
+[; ;newmain.c: 305:     TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"306
+[; ;newmain.c: 306:     LATC = 0;
+[e = _LATC -> -> 0 `i `uc ]
+"308
+[; ;newmain.c: 308:     PWM_Init(500);
+[e ( _PWM_Init (1 -> -> 500 `i `l ]
+"309
+[; ;newmain.c: 309:     PWM_Duty(0);
+[e ( _PWM_Duty (1 -> -> 0 `i `ui ]
+"310
+[; ;newmain.c: 310:     PWM_Start();
+[e ( _PWM_Start ..  ]
+"311
+[; ;newmain.c: 311: }
 [e :UE 306 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"272
-[; ;newmain.c: 272: int main(int argc, char** argv) {
+"313
+[; ;newmain.c: 313: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"274
-[; ;newmain.c: 274:     TRISDbits.TRISD0 = 1;
+"315
+[; ;newmain.c: 315:     TRISDbits.TRISD0 = 1;
 [e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"275
-[; ;newmain.c: 275:     PORTDbits.RD0 = 0;
+"316
+[; ;newmain.c: 316:     TRISDbits.TRISD1 = 1;
+[e = . . _TRISDbits 0 1 -> -> 1 `i `uc ]
+"317
+[; ;newmain.c: 317:     PORTDbits.RD0 = 0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"277
-[; ;newmain.c: 277:     Setup();
-[e ( _Setup ..  ]
-"280
-[; ;newmain.c: 280:     int isRunning = 1;
-[v _isRunning `i ~T0 @X0 1 a ]
-[e = _isRunning -> 1 `i ]
-"281
-[; ;newmain.c: 281:     while (1) {
-[e :U 309 ]
+"318
+[; ;newmain.c: 318:     PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"320
+[; ;newmain.c: 320:     while (1) {
+[e :U 313 ]
 {
-"282
-[; ;newmain.c: 282:         if (PORTDbits.RD0 == 0) {
-[e $ ! == -> . . _PORTDbits 0 0 `i -> 0 `i 311  ]
+"321
+[; ;newmain.c: 321:         if (PORTDbits.RD0 == 0 && PORTDbits.RD1 == 0) {
+[e $ ! && == -> . . _PORTDbits 0 0 `i -> 0 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 315  ]
 {
-"283
-[; ;newmain.c: 283:             isRunning = 0;
+"322
+[; ;newmain.c: 322:             isRunning = 0;
 [e = _isRunning -> 0 `i ]
-"284
-[; ;newmain.c: 284:             TRISCbits.TRISC0 = 1;
+"323
+[; ;newmain.c: 323:             TRISCbits.TRISC0 = 1;
 [e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
-"285
-[; ;newmain.c: 285:             TRISCbits.TRISC1 = 1;
+"324
+[; ;newmain.c: 324:             TRISCbits.TRISC1 = 1;
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
-"286
-[; ;newmain.c: 286:             INTCONbits.TMR0IE = 1;
+"325
+[; ;newmain.c: 325:             INTCONbits.TMR0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"287
-[; ;newmain.c: 287:             PWM_Duty(0);
+"326
+[; ;newmain.c: 326:             PWM_Duty(0);
 [e ( _PWM_Duty (1 -> -> 0 `i `ui ]
-"288
-[; ;newmain.c: 288:         }
+"327
+[; ;newmain.c: 327:         }
 }
-[e :U 311 ]
-"289
-[; ;newmain.c: 289:         if (!isRunning && PORTDbits.RD0 == 1) {
-[e $ ! && ! != _isRunning -> 0 `i == -> . . _PORTDbits 0 0 `i -> 1 `i 312  ]
+[e :U 315 ]
+"328
+[; ;newmain.c: 328:         if (!isRunning && PORTDbits.RD0 == 1 && PORTDbits.RD1 == 0) {
+[e $ ! && && ! != _isRunning -> 0 `i == -> . . _PORTDbits 0 0 `i -> 1 `i == -> . . _PORTDbits 0 1 `i -> 0 `i 316  ]
 {
-"290
-[; ;newmain.c: 290:             isRunning = 1;
+"329
+[; ;newmain.c: 329:             isRunning = 1;
 [e = _isRunning -> 1 `i ]
-"291
-[; ;newmain.c: 291:             Setup();
-[e ( _Setup ..  ]
-"292
-[; ;newmain.c: 292:         }
+"330
+[; ;newmain.c: 330:             Setup(0);
+[e ( _Setup (1 -> 0 `i ]
+"331
+[; ;newmain.c: 331:         }
+}
+[e $U 317  ]
+"332
+[; ;newmain.c: 332:         else if (!isRunning && PORTDbits.RD1 == 1 && PORTDbits.RD0 == 0) {
+[e :U 316 ]
+[e $ ! && && ! != _isRunning -> 0 `i == -> . . _PORTDbits 0 1 `i -> 1 `i == -> . . _PORTDbits 0 0 `i -> 0 `i 318  ]
+{
+"333
+[; ;newmain.c: 333:             isRunning = 1;
+[e = _isRunning -> 1 `i ]
+"334
+[; ;newmain.c: 334:             Setup(1);
+[e ( _Setup (1 -> 1 `i ]
+"335
+[; ;newmain.c: 335:         }
+}
+[e $U 319  ]
+"336
+[; ;newmain.c: 336:         else if (!isRunning && PORTDbits.RD0 == 1 && PORTDbits.RD1 == 1) {
+[e :U 318 ]
+[e $ ! && && ! != _isRunning -> 0 `i == -> . . _PORTDbits 0 0 `i -> 1 `i == -> . . _PORTDbits 0 1 `i -> 1 `i 320  ]
+{
+"337
+[; ;newmain.c: 337:             isRunning = 1;
+[e = _isRunning -> 1 `i ]
+"338
+[; ;newmain.c: 338:             Setup(2);
+[e ( _Setup (1 -> 2 `i ]
+"339
+[; ;newmain.c: 339:         }
+}
+[e :U 320 ]
+[e :U 319 ]
+[e :U 317 ]
+"340
+[; ;newmain.c: 340:         if (PIR2bits.CCP2IF) {
+[e $ ! != -> . . _PIR2bits 0 0 `i -> 0 `i 321  ]
+{
+"341
+[; ;newmain.c: 341:             PIR2bits.CCP2IF = 0;
+[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
+"342
+[; ;newmain.c: 342:             TMR3 = 0;
+[e = _TMR3 -> -> 0 `i `us ]
+"343
+[; ;newmain.c: 343:         }
+}
+[e :U 321 ]
+"344
+[; ;newmain.c: 344:     }
 }
 [e :U 312 ]
-"293
-[; ;newmain.c: 293:         if (PIR2bits.CCP2IF) {
-[e $ ! != -> . . _PIR2bits 0 0 `i -> 0 `i 313  ]
-{
-"294
-[; ;newmain.c: 294:             PIR2bits.CCP2IF = 0;
-[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
-"295
-[; ;newmain.c: 295:             TMR3 = 0;
-[e = _TMR3 -> -> 0 `i `us ]
-"296
-[; ;newmain.c: 296:         }
-}
-[e :U 313 ]
-"297
-[; ;newmain.c: 297:     }
-}
-[e :U 308 ]
-[e $U 309  ]
-[e :U 310 ]
-"298
-[; ;newmain.c: 298:     return 0;
+[e $U 313  ]
+[e :U 314 ]
+"345
+[; ;newmain.c: 345:     return 0;
 [e ) -> 0 `i ]
-[e $UE 307  ]
-"299
-[; ;newmain.c: 299: }
-[e :UE 307 ]
+[e $UE 311  ]
+"346
+[; ;newmain.c: 346: }
+[e :UE 311 ]
 }
 [v $root$_HI_ISR `(v ~T0 @X0 0 e ]
-"301
-[; ;newmain.c: 301: void __attribute__((picinterrupt("high_priority"))) HI_ISR(void) {
+"348
+[; ;newmain.c: 348: void __attribute__((picinterrupt("high_priority"))) HI_ISR(void) {
 [v _HI_ISR `(v ~T41 @X0 1 ef ]
 {
 [e :U _HI_ISR ]
 [f ]
-"302
-[; ;newmain.c: 302:     if (INTCONbits.TMR0IF) {
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 315  ]
-{
-"303
-[; ;newmain.c: 303:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"304
-[; ;newmain.c: 304:         TMR0 = 0xF1;
-[e = _TMR0 -> -> 241 `i `us ]
-"306
-[; ;newmain.c: 306:         if (MELODY_PTR >= MELODY_LENGTH && MELODY_PTR2 >= MELODY_LENGTH2) {
-[e $ ! && >= _MELODY_PTR _MELODY_LENGTH >= _MELODY_PTR2 _MELODY_LENGTH2 316  ]
-{
-"307
-[; ;newmain.c: 307:             MELODY_PTR = 0;
-[e = _MELODY_PTR -> 0 `i ]
-"308
-[; ;newmain.c: 308:             MELODY_PTR2 = 0;
-[e = _MELODY_PTR2 -> 0 `i ]
-"309
-[; ;newmain.c: 309:             led_cycle = 0;
-[e = _led_cycle -> 0 `i ]
-"310
-[; ;newmain.c: 310:             led2_cycle = 0;
-[e = _led2_cycle -> 0 `i ]
-"311
-[; ;newmain.c: 311:         }
-}
-[e :U 316 ]
-"313
-[; ;newmain.c: 313:         ++led_cycle;
-[e =+ _led_cycle -> 1 `i ]
-"314
-[; ;newmain.c: 314:         ++led2_cycle;
-[e =+ _led2_cycle -> 1 `i ]
-"315
-[; ;newmain.c: 315:         if (led_cycle >= tmr1_cycle && MELODY_PTR < MELODY_LENGTH) {
-[e $ ! && >= _led_cycle _tmr1_cycle < _MELODY_PTR _MELODY_LENGTH 317  ]
-{
-"316
-[; ;newmain.c: 316:             ++MELODY_PTR;
-[e =+ _MELODY_PTR -> 1 `i ]
-"318
-[; ;newmain.c: 318:             current_tone = melody[MELODY_PTR];
-[e = _current_tone *U + &U _melody * -> -> _MELODY_PTR `ui `ux -> -> # *U &U _melody `ui `ux ]
-"319
-[; ;newmain.c: 319:             int beat = beats[MELODY_PTR];
-[v _beat `i ~T0 @X0 1 a ]
-[e = _beat -> *U + &U _beats * -> -> _MELODY_PTR `ui `ux -> -> # *U &U _beats `ui `ux `i ]
-"320
-[; ;newmain.c: 320:             if (beat == 1) tmr1_cycle = 48;
-[e $ ! == _beat -> 1 `i 318  ]
-[e = _tmr1_cycle -> 48 `i ]
-[e $U 319  ]
-"321
-[; ;newmain.c: 321:             else if (beat == 2) tmr1_cycle = 24;
-[e :U 318 ]
-[e $ ! == _beat -> 2 `i 320  ]
-[e = _tmr1_cycle -> 24 `i ]
-[e $U 321  ]
-"322
-[; ;newmain.c: 322:             else if (beat == 4) tmr1_cycle = 12;
-[e :U 320 ]
-[e $ ! == _beat -> 4 `i 322  ]
-[e = _tmr1_cycle -> 12 `i ]
-[e $U 323  ]
-"323
-[; ;newmain.c: 323:             else if (beat == 6) tmr1_cycle = 9;
-[e :U 322 ]
-[e $ ! == _beat -> 6 `i 324  ]
-[e = _tmr1_cycle -> 9 `i ]
-[e $U 325  ]
-"324
-[; ;newmain.c: 324:             else if (beat == 8) tmr1_cycle = 6;
-[e :U 324 ]
-[e $ ! == _beat -> 8 `i 326  ]
-[e = _tmr1_cycle -> 6 `i ]
-[e $U 327  ]
-"325
-[; ;newmain.c: 325:             else if (beat == 16) tmr1_cycle = 3;
-[e :U 326 ]
-[e $ ! == _beat -> 16 `i 328  ]
-[e = _tmr1_cycle -> 3 `i ]
-[e :U 328 ]
-[e :U 327 ]
-[e :U 325 ]
-[e :U 323 ]
-[e :U 321 ]
-[e :U 319 ]
-"326
-[; ;newmain.c: 326:             tmr1_cycle *= 10;
-[e =* _tmr1_cycle -> 10 `i ]
-"327
-[; ;newmain.c: 327:             if (melody[MELODY_PTR] == 0) {
-[e $ ! == *U + &U _melody * -> -> _MELODY_PTR `ui `ux -> -> # *U &U _melody `ui `ux -> 0 `i 329  ]
-{
-"328
-[; ;newmain.c: 328:                 TRISCbits.TRISC0 = 1;
-[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
-"329
-[; ;newmain.c: 329:             }
-}
-[e $U 330  ]
-"330
-[; ;newmain.c: 330:             else {
-[e :U 329 ]
-{
-"331
-[; ;newmain.c: 331:                 TRISCbits.TRISC0 = 0;
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-"332
-[; ;newmain.c: 332:             }
-}
-[e :U 330 ]
-"334
-[; ;newmain.c: 334:             playTone();
-[e ( _playTone ..  ]
-"336
-[; ;newmain.c: 336:             led_cycle = 0;
-[e = _led_cycle -> 0 `i ]
-"337
-[; ;newmain.c: 337:         }
-}
-[e :U 317 ]
-"339
-[; ;newmain.c: 339:         if (led2_cycle >= tmr3_cycle && MELODY_PTR2 < MELODY_LENGTH2) {
-[e $ ! && >= _led2_cycle _tmr3_cycle < _MELODY_PTR2 _MELODY_LENGTH2 331  ]
-{
-"340
-[; ;newmain.c: 340:             ++MELODY_PTR2;
-[e =+ _MELODY_PTR2 -> 1 `i ]
-"342
-[; ;newmain.c: 342:             if (MELODY_PTR2 > MELODY_LENGTH2) return;
-[e $ ! > _MELODY_PTR2 _MELODY_LENGTH2 332  ]
-[e $UE 314  ]
-[e :U 332 ]
-"346
-[; ;newmain.c: 346:             CCPR2 = 1000000/melody2[MELODY_PTR2];
-[e = _CCPR2 -> / -> 1000000 `l -> *U + &U _melody2 * -> -> _MELODY_PTR2 `ui `ux -> -> # *U &U _melody2 `ui `ux `l `us ]
-"347
-[; ;newmain.c: 347:             if (melody2[MELODY_PTR2] == 0) {
-[e $ ! == *U + &U _melody2 * -> -> _MELODY_PTR2 `ui `ux -> -> # *U &U _melody2 `ui `ux -> 0 `i 333  ]
-{
-"348
-[; ;newmain.c: 348:                 TRISCbits.TRISC1 = 1;
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
 "349
-[; ;newmain.c: 349:                 CCPR2 = 0;
-[e = _CCPR2 -> -> 0 `i `us ]
-"350
-[; ;newmain.c: 350:             }
-}
-[e $U 334  ]
-"351
-[; ;newmain.c: 351:             else {
-[e :U 333 ]
+[; ;newmain.c: 349:     if (INTCONbits.TMR0IF) {
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 323  ]
 {
-"352
-[; ;newmain.c: 352:                 TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"350
+[; ;newmain.c: 350:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"351
+[; ;newmain.c: 351:         TMR0 = 0xF1;
+[e = _TMR0 -> -> 241 `i `us ]
 "353
-[; ;newmain.c: 353:                 CCPR2 = 1000000/melody2[MELODY_PTR2];
-[e = _CCPR2 -> / -> 1000000 `l -> *U + &U _melody2 * -> -> _MELODY_PTR2 `ui `ux -> -> # *U &U _melody2 `ui `ux `l `us ]
+[; ;newmain.c: 353:         if (MELODY_PTR >= MELODY_LENGTH && MELODY_PTR2 >= MELODY_LENGTH2) {
+[e $ ! && >= _MELODY_PTR _MELODY_LENGTH >= _MELODY_PTR2 _MELODY_LENGTH2 324  ]
+{
 "354
-[; ;newmain.c: 354:             }
-}
-[e :U 334 ]
+[; ;newmain.c: 354:             MELODY_PTR = 0;
+[e = _MELODY_PTR -> 0 `i ]
+"355
+[; ;newmain.c: 355:             MELODY_PTR2 = 0;
+[e = _MELODY_PTR2 -> 0 `i ]
 "356
-[; ;newmain.c: 356:             int beat = beats2[MELODY_PTR2];
-[v _beat `i ~T0 @X0 1 a ]
-[e = _beat -> *U + &U _beats2 * -> -> _MELODY_PTR2 `ui `ux -> -> # *U &U _beats2 `ui `ux `i ]
+[; ;newmain.c: 356:             led_cycle = 0;
+[e = _led_cycle -> 0 `i ]
 "357
-[; ;newmain.c: 357:             if (beat == 1) tmr3_cycle = 48;
-[e $ ! == _beat -> 1 `i 335  ]
-[e = _tmr3_cycle -> 48 `i ]
-[e $U 336  ]
-"358
-[; ;newmain.c: 358:             else if (beat == 2) tmr3_cycle = 24;
-[e :U 335 ]
-[e $ ! == _beat -> 2 `i 337  ]
-[e = _tmr3_cycle -> 24 `i ]
-[e $U 338  ]
-"359
-[; ;newmain.c: 359:             else if (beat == 4) tmr3_cycle = 12;
-[e :U 337 ]
-[e $ ! == _beat -> 4 `i 339  ]
-[e = _tmr3_cycle -> 12 `i ]
-[e $U 340  ]
-"360
-[; ;newmain.c: 360:             else if (beat == 6) tmr3_cycle = 9;
-[e :U 339 ]
-[e $ ! == _beat -> 6 `i 341  ]
-[e = _tmr3_cycle -> 9 `i ]
-[e $U 342  ]
-"361
-[; ;newmain.c: 361:             else if (beat == 8) tmr3_cycle = 6;
-[e :U 341 ]
-[e $ ! == _beat -> 8 `i 343  ]
-[e = _tmr3_cycle -> 6 `i ]
-[e $U 344  ]
-"362
-[; ;newmain.c: 362:             else if (beat == 16) tmr3_cycle = 3;
-[e :U 343 ]
-[e $ ! == _beat -> 16 `i 345  ]
-[e = _tmr3_cycle -> 3 `i ]
-[e :U 345 ]
-[e :U 344 ]
-[e :U 342 ]
-[e :U 340 ]
-[e :U 338 ]
-[e :U 336 ]
-"363
-[; ;newmain.c: 363:             tmr3_cycle *= 10;
-[e =* _tmr3_cycle -> 10 `i ]
-"365
-[; ;newmain.c: 365:             led2_cycle = 0;
+[; ;newmain.c: 357:             led2_cycle = 0;
 [e = _led2_cycle -> 0 `i ]
+"359
+[; ;newmain.c: 359:             isRunning = 0;
+[e = _isRunning -> 0 `i ]
+"360
+[; ;newmain.c: 360:             TRISCbits.TRISC0 = 1;
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+"361
+[; ;newmain.c: 361:             TRISCbits.TRISC1 = 1;
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+"362
+[; ;newmain.c: 362:             INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"363
+[; ;newmain.c: 363:             PWM_Duty(0);
+[e ( _PWM_Duty (1 -> -> 0 `i `ui ]
+"364
+[; ;newmain.c: 364:         }
+}
+[e :U 324 ]
 "366
-[; ;newmain.c: 366:         }
-}
-[e :U 331 ]
+[; ;newmain.c: 366:         ++led_cycle;
+[e =+ _led_cycle -> 1 `i ]
+"367
+[; ;newmain.c: 367:         ++led2_cycle;
+[e =+ _led2_cycle -> 1 `i ]
 "368
-[; ;newmain.c: 368:     }
-}
-[e :U 315 ]
+[; ;newmain.c: 368:         if (led_cycle >= tmr1_cycle && MELODY_PTR < MELODY_LENGTH) {
+[e $ ! && >= _led_cycle _tmr1_cycle < _MELODY_PTR _MELODY_LENGTH 325  ]
+{
 "369
-[; ;newmain.c: 369: }
-[e :UE 314 ]
+[; ;newmain.c: 369:             ++MELODY_PTR;
+[e =+ _MELODY_PTR -> 1 `i ]
+"371
+[; ;newmain.c: 371:             current_tone = wm_1[MELODY_PTR];
+[e = _current_tone *U + _wm_1 * -> _MELODY_PTR `x -> -> # *U _wm_1 `i `x ]
+"372
+[; ;newmain.c: 372:             int beat = wb_1[MELODY_PTR];
+[v _beat `i ~T0 @X0 1 a ]
+[e = _beat -> *U + _wb_1 * -> _MELODY_PTR `x -> -> # *U _wb_1 `i `x `i ]
+"373
+[; ;newmain.c: 373:             if (beat == 1) tmr1_cycle = 48;
+[e $ ! == _beat -> 1 `i 326  ]
+[e = _tmr1_cycle -> 48 `i ]
+[e $U 327  ]
+"374
+[; ;newmain.c: 374:             else if (beat == 2) tmr1_cycle = 24;
+[e :U 326 ]
+[e $ ! == _beat -> 2 `i 328  ]
+[e = _tmr1_cycle -> 24 `i ]
+[e $U 329  ]
+"375
+[; ;newmain.c: 375:             else if (beat == 4) tmr1_cycle = 12;
+[e :U 328 ]
+[e $ ! == _beat -> 4 `i 330  ]
+[e = _tmr1_cycle -> 12 `i ]
+[e $U 331  ]
+"376
+[; ;newmain.c: 376:             else if (beat == 6) tmr1_cycle = 9;
+[e :U 330 ]
+[e $ ! == _beat -> 6 `i 332  ]
+[e = _tmr1_cycle -> 9 `i ]
+[e $U 333  ]
+"377
+[; ;newmain.c: 377:             else if (beat == 8) tmr1_cycle = 6;
+[e :U 332 ]
+[e $ ! == _beat -> 8 `i 334  ]
+[e = _tmr1_cycle -> 6 `i ]
+[e $U 335  ]
+"378
+[; ;newmain.c: 378:             else if (beat == 16) tmr1_cycle = 3;
+[e :U 334 ]
+[e $ ! == _beat -> 16 `i 336  ]
+[e = _tmr1_cycle -> 3 `i ]
+[e :U 336 ]
+[e :U 335 ]
+[e :U 333 ]
+[e :U 331 ]
+[e :U 329 ]
+[e :U 327 ]
+"379
+[; ;newmain.c: 379:             tmr1_cycle *= 10;
+[e =* _tmr1_cycle -> 10 `i ]
+"380
+[; ;newmain.c: 380:             if (wm_1[MELODY_PTR] == 0) {
+[e $ ! == *U + _wm_1 * -> _MELODY_PTR `x -> -> # *U _wm_1 `i `x -> 0 `i 337  ]
+{
+"381
+[; ;newmain.c: 381:                 TRISCbits.TRISC0 = 1;
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+"382
+[; ;newmain.c: 382:             }
+}
+[e $U 338  ]
+"383
+[; ;newmain.c: 383:             else {
+[e :U 337 ]
+{
+"384
+[; ;newmain.c: 384:                 TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+"385
+[; ;newmain.c: 385:             }
+}
+[e :U 338 ]
+"387
+[; ;newmain.c: 387:             playTone();
+[e ( _playTone ..  ]
+"389
+[; ;newmain.c: 389:             led_cycle = 0;
+[e = _led_cycle -> 0 `i ]
+"390
+[; ;newmain.c: 390:         }
+}
+[e :U 325 ]
+"392
+[; ;newmain.c: 392:         if (led2_cycle >= tmr3_cycle && MELODY_PTR2 < MELODY_LENGTH2) {
+[e $ ! && >= _led2_cycle _tmr3_cycle < _MELODY_PTR2 _MELODY_LENGTH2 339  ]
+{
+"393
+[; ;newmain.c: 393:             ++MELODY_PTR2;
+[e =+ _MELODY_PTR2 -> 1 `i ]
+"397
+[; ;newmain.c: 397:             CCPR2 = 1000000/wm_2[MELODY_PTR2];
+[e = _CCPR2 -> / -> 1000000 `l -> *U + _wm_2 * -> _MELODY_PTR2 `x -> -> # *U _wm_2 `i `x `l `us ]
+"398
+[; ;newmain.c: 398:             if (wm_2[MELODY_PTR2] == 0) {
+[e $ ! == *U + _wm_2 * -> _MELODY_PTR2 `x -> -> # *U _wm_2 `i `x -> 0 `i 340  ]
+{
+"399
+[; ;newmain.c: 399:                 TRISCbits.TRISC1 = 1;
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+"400
+[; ;newmain.c: 400:                 CCPR2 = 0;
+[e = _CCPR2 -> -> 0 `i `us ]
+"401
+[; ;newmain.c: 401:             }
+}
+[e $U 341  ]
+"402
+[; ;newmain.c: 402:             else {
+[e :U 340 ]
+{
+"403
+[; ;newmain.c: 403:                 TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"404
+[; ;newmain.c: 404:                 CCPR2 = 1000000/wm_2[MELODY_PTR2];
+[e = _CCPR2 -> / -> 1000000 `l -> *U + _wm_2 * -> _MELODY_PTR2 `x -> -> # *U _wm_2 `i `x `l `us ]
+"405
+[; ;newmain.c: 405:             }
+}
+[e :U 341 ]
+"407
+[; ;newmain.c: 407:             int beat = wb_2[MELODY_PTR2];
+[v _beat `i ~T0 @X0 1 a ]
+[e = _beat -> *U + _wb_2 * -> _MELODY_PTR2 `x -> -> # *U _wb_2 `i `x `i ]
+"408
+[; ;newmain.c: 408:             if (beat == 1) tmr3_cycle = 48;
+[e $ ! == _beat -> 1 `i 342  ]
+[e = _tmr3_cycle -> 48 `i ]
+[e $U 343  ]
+"409
+[; ;newmain.c: 409:             else if (beat == 2) tmr3_cycle = 24;
+[e :U 342 ]
+[e $ ! == _beat -> 2 `i 344  ]
+[e = _tmr3_cycle -> 24 `i ]
+[e $U 345  ]
+"410
+[; ;newmain.c: 410:             else if (beat == 4) tmr3_cycle = 12;
+[e :U 344 ]
+[e $ ! == _beat -> 4 `i 346  ]
+[e = _tmr3_cycle -> 12 `i ]
+[e $U 347  ]
+"411
+[; ;newmain.c: 411:             else if (beat == 6) tmr3_cycle = 9;
+[e :U 346 ]
+[e $ ! == _beat -> 6 `i 348  ]
+[e = _tmr3_cycle -> 9 `i ]
+[e $U 349  ]
+"412
+[; ;newmain.c: 412:             else if (beat == 8) tmr3_cycle = 6;
+[e :U 348 ]
+[e $ ! == _beat -> 8 `i 350  ]
+[e = _tmr3_cycle -> 6 `i ]
+[e $U 351  ]
+"413
+[; ;newmain.c: 413:             else if (beat == 16) tmr3_cycle = 3;
+[e :U 350 ]
+[e $ ! == _beat -> 16 `i 352  ]
+[e = _tmr3_cycle -> 3 `i ]
+[e :U 352 ]
+[e :U 351 ]
+[e :U 349 ]
+[e :U 347 ]
+[e :U 345 ]
+[e :U 343 ]
+"414
+[; ;newmain.c: 414:             tmr3_cycle *= 10;
+[e =* _tmr3_cycle -> 10 `i ]
+"416
+[; ;newmain.c: 416:             led2_cycle = 0;
+[e = _led2_cycle -> 0 `i ]
+"417
+[; ;newmain.c: 417:         }
+}
+[e :U 339 ]
+"419
+[; ;newmain.c: 419:     }
+}
+[e :U 323 ]
+"420
+[; ;newmain.c: 420: }
+[e :UE 322 ]
 }
