@@ -1,6 +1,8 @@
 #include <xc.h>
 #include "motor.h"
 
+#define _XTAL_FREQ 1000000
+
 #define MOTOR_X_1 PORTDbits.RD0
 #define MOTOR_X_2 PORTDbits.RD1
 #define MOTOR_Y_1 PORTDbits.RD2
