@@ -83,6 +83,7 @@
 int NUMBER; // for seven-segment display
 int SENSOR_X, SENSOR_Y;
 int SENSITIVE = 100;
+int PRESERVE = 0;
 
 void main(void) {
     IRConfig();
@@ -102,16 +103,22 @@ void main(void) {
 
 void __interrupt(high_priority) HI_ISR(void) {
     if (INTCON3bits.INT2IF) { // Grab button
+        if (NUMBER == 0) {
+            return;
+        }
         // close interrupt
         INTCON3bits.INT2IE = 0;
         INTCON3bits.INT2IF = 0;
         // close the ADC convertor
         ADCON0bits.ADON = 0;
         // update NUMBER and display it
-        NUMBER -= 10;
-        Display(NUMBER);
+        if (PRESERVE == 0 && NUMBER < 30) {
+            NUMBER -= 10;
+            Display(NUMBER);
+        }
         // grab the item
         Grab();
+        // reenable the claw machine
         if (NUMBER >= 10) {
             // open the ADC convertor 
             ADCON0bits.ADON = 1;
@@ -119,32 +126,28 @@ void __interrupt(high_priority) HI_ISR(void) {
             INTCON3bits.INT2IE = 0;
         }
     }
-    /* no need for collision interrupt and timer 0
-    else if (INTCONbits.RBIF) { // collision interrupt
-        INTCONbits.RBIF = 0;
-        if (PORTBbits.RB5==0) {
-            Nop();
-            Nop();
-            Nop();  
-        }
-        if (PORTBbits.RB4==0) {
-            Nop();
-            Nop();
-            Nop();
-        }
-    }
-    else if (INTCONbits.TMR0IF) { // grab motor timer
-        INTCONbits.TMR0IF = 0;
-        TMR0 = 0xc2f6;
-    }
-    */
     else if (INTCONbits.INT0IF) { // infra-red control
+        // close the ADC convertor
+        ADCON0bits.ADON = 0;
         INTCONbits.INT0IF = 0;
-        Nop();
+        if (PRESERVE >= 0) {
+            PRESERVE -= 1;
+            NUMBER -= 30;
+        }
     }
     else if (INTCON3bits.INT1IF) { // micro switch for seven-segment display
         INTCON3bits.INT1IF = 0;
         NUMBER += 5; //need to divide by 2 (bug???)
+        if (NUMBER >= 10) {
+            // open grab button interrupt
+            INTCON3bits.INT2IE = 1;
+            // open ADC convertor
+            ADCON0bits.ADON = 1;
+        }
+        if (NUMBER >= 30) {
+            // record preserve number
+            PRESERVE = (int)(NUMBER / 30);
+        }
         Display(NUMBER);
     } else if (PIR1bits.ADIF) { // XY Sensor ADC convertor interrupt
         PIR1bits.ADIF = 0;

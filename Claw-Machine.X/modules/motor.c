@@ -28,7 +28,7 @@ void Tmr0Config() {
 
 void Int2Config() { // grab button
     TRISBbits.TRISB2 = 1;
-    INTCON3bits.INT2IE = 1;
+    INTCON3bits.INT2IE = 0;
     INTCON3bits.INT2IF = 0;
     INTCON3bits.INT2IP = 1;
     INTCON2bits.INTEDG2 = 1; // on rising edge

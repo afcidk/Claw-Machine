@@ -28,5 +28,5 @@ void ADCConfig(void) {
     RCONbits.IPEN = 1;
     INTCONbits.GIE = 1;
     // open ADC convertor
-    ADCON0bits.ADON = 1;   
+    ADCON0bits.ADON = 0;   
 }
