@@ -26,7 +26,7 @@
 #pragma config CCP2MX = PORTC   // CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)
 #pragma config PBADEN = ON      // PORTB A/D Enable bit (PORTB<4:0> pins are configured as analog input channels on Reset)
 #pragma config LPT1OSC = OFF    // Low-Power Timer1 Oscillator Enable bit (Timer1 configured for higher power operation)
-#pragma config MCLRE = ON       // MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
+#pragma config MCLRE = OFF       // MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
 // CONFIG4L
 #pragma config STVREN = ON      // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
@@ -77,7 +77,7 @@ void TMR0Config() {
     T0CONbits.T08BIT = 0;
     // set timer0 prescaler to 1:4
     T0CONbits.PSA = 0;
-    T0CONbits.T0PS = 1;
+    T0CONbits.T0PS = 3;
     
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
@@ -97,6 +97,8 @@ void LEDConfig() {
 
 void __interrupt() timer_zero() {
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
+        LATA = 1 - LATA;
+        /*
         INTCONbits.TMR0IF = 0;
         CURRENT = (CURRENT + 1) % 30;
         switch (CURRENT / 8) {
@@ -121,6 +123,7 @@ void __interrupt() timer_zero() {
                 LATD = LATD << CURRENT % 8;
                 break;
         }
+        */
     }
 }
 
