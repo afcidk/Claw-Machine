@@ -79,12 +79,10 @@
 #define MOTOR_X_2 PORTDbits.RD1
 #define MOTOR_Y_1 PORTDbits.RD2
 #define MOTOR_Y_2 PORTDbits.RD3
-#define MOTOR_Z_1 PORTDbits.RD4 // now useless
-#define MOTOR_Z_2 PORTDbits.RD5 // now useless
 
 int NUMBER; // for seven-segment display
 int SENSOR_X, SENSOR_Y;
-int SENSITIVE = 200;
+int SENSITIVE = 100;
 
 void main(void) {
     IRConfig();
@@ -103,17 +101,31 @@ void main(void) {
 
 
 void __interrupt(high_priority) HI_ISR(void) {
-    if (INTCON3bits.INT2IF && !isGrabbing()) { // Grab button
+    if (INTCON3bits.INT2IF) { // Grab button
+        // close interrupt
+        INTCON3bits.INT2IE = 0;
         INTCON3bits.INT2IF = 0;
-        Nop();
+        // close the ADC convertor
+        ADCON0bits.ADON = 0;
+        // update NUMBER and display it
+        NUMBER -= 10;
+        Display(NUMBER);
+        // grab the item
         Grab();
+        if (NUMBER >= 10) {
+            // open the ADC convertor 
+            ADCON0bits.ADON = 1;
+            // open grab button interrupt
+            INTCON3bits.INT2IE = 0;
+        }
     }
+    /* no need for collision interrupt and timer 0
     else if (INTCONbits.RBIF) { // collision interrupt
         INTCONbits.RBIF = 0;
         if (PORTBbits.RB5==0) {
             Nop();
             Nop();
-            Nop();
+            Nop();  
         }
         if (PORTBbits.RB4==0) {
             Nop();
@@ -125,6 +137,7 @@ void __interrupt(high_priority) HI_ISR(void) {
         INTCONbits.TMR0IF = 0;
         TMR0 = 0xc2f6;
     }
+    */
     else if (INTCONbits.INT0IF) { // infra-red control
         INTCONbits.INT0IF = 0;
         Nop();
@@ -133,7 +146,7 @@ void __interrupt(high_priority) HI_ISR(void) {
         INTCON3bits.INT1IF = 0;
         NUMBER += 5; //need to divide by 2 (bug???)
         Display(NUMBER);
-    } else if (PIR1bits.ADIF && !isGrabbing()) { // XY Sensor ADC convertor interrupt
+    } else if (PIR1bits.ADIF) { // XY Sensor ADC convertor interrupt
         PIR1bits.ADIF = 0;
         if (ADCON0bits.CHS) {
             SENSOR_X = (ADRESH * 256) | (ADRESL);
@@ -142,7 +155,7 @@ void __interrupt(high_priority) HI_ISR(void) {
         }
         ADCON0bits.CHS =  1 - ADCON0bits.CHS;
         ADCON0bits.GO = 1;
-         //turn on motor when result is large enough
+        // turn on motor when result is large enough
         if (SENSOR_Y > 1024 - SENSITIVE) {
             MOTOR_Y_1 = 1;
             MOTOR_Y_2 = 0;

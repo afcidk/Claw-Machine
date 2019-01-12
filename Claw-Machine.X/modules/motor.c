@@ -1,14 +1,20 @@
 #include <xc.h>
 #include "motor.h"
-int GrabStat = 0;
+
+#define MOTOR_X_1 PORTDbits.RD0
+#define MOTOR_X_2 PORTDbits.RD1
+#define MOTOR_Y_1 PORTDbits.RD2
+#define MOTOR_Y_2 PORTDbits.RD3
+#define MOTOR_Z_1 PORTDbits.RD4
+#define MOTOR_Z_2 PORTDbits.RD5
 
 void MotorConfig() {
     TRISBbits.TRISB3 = 0;  //electric manget
     LATBbits.LATB3 = 0;
-    Tmr0Config();
+    // Tmr0Config();
     Int2Config();
 }
-
+/* no need for timer 0
 void Tmr0Config() {
     INTCONbits.TMR0IE = 1;
     INTCONbits.TMR0IF = 0;
@@ -16,6 +22,7 @@ void Tmr0Config() {
     
     TMR0 = 0xc2f6;
 }
+*/
 
 void Int2Config() { // grab button
     TRISBbits.TRISB2 = 1;
@@ -32,30 +39,32 @@ void magnet_on() {
 void magnet_off() {
     LATBbits.LATB3 = 0;
 }
-
+/* no need for GrabStat
 int isGrabbing() {
     return GrabStat;
 }
+*/
 void Grab() {
-    GrabStat = 1;
-    T0CON = 0b10000011;
-    
+    // start put down the magnet
+    MOTOR_Z_1 = 1;
+    MOTOR_Z_2 = 0;
+    __delay_ms(1000);
+    // open the magnet
     magnet_on();
-    // let magnetic go down
-    
-    
-    // let magnetic go up
-    
-    
-    // go to destination, turn off magnet
+    __delay_ms(1000);
+    // close the magnet
     magnet_off();
-    
-    
-    // go to initial place
-    
-    // restart adc conversion
-    T0CONbits.TMR0ON = 0;
-    ADCON0bits.GO = 1;
-    
-    GrabStat = 0;
+    // start get back the magnet
+    MOTOR_Z_1 = 0;
+    MOTOR_Z_2 = 1;
+    __delay_ms(1000);
+    // back to the origin place
+    while (!PORTBbits.RB5) {
+        MOTOR_X_1 = 0;
+        MOTOR_X_2 = 1;
+    }
+    while (!PORTBbits.RB6) {
+        MOTOR_Y_1 = 0;
+        MOTOR_Y_2 = 1;
+    }
 }
