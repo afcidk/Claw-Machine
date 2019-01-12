@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.00/pic/dat/en_msgs.txt -cs \
   -h+dist/default/debug/buzzer2.X.debug.sym \
   --cmf=dist/default/debug/buzzer2.X.debug.cmf -z -Q18F4520 \
-  -o/tmp/xcXhQHq2J --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcXXD0qQ8 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/debug/buzzer2.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=0F7h-05f3h -pstack=STACK -ACODE=00h-07DBFh -ACONST=00h-07DBFh \
   -ASMALLCONST=0600h-06FFhx119,07D00h-07DBFh -AMEDIUMCONST=0600h-07DBFh \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXLSGqgN.o dist/default/debug/buzzer2.X.debug.o 
+  /tmp/xcXhcQo6P.o dist/default/debug/buzzer2.X.debug.o 
 
 Object code version is 3.11
 
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXLSGqgN.o
+/tmp/xcXhcQo6P.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0

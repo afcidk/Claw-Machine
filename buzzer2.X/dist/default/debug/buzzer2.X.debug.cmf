@@ -49,7 +49,7 @@ intcode CODE 0 8 8 6 1
 dataCOMRAM COMRAM 1 7B 7B 4 1
 bssCOMRAM COMRAM 1 71 71 A 1
 mediumconst MEDIUMCONST 0 77E2 77E2 5DE 1
-$/tmp/xcXLSGqgN.o
+$/tmp/xcXhcQo6P.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -97,7 +97,7 @@ MEDIUMCONST 2702-77E1 1
 %LINETAB
 $dist/default/debug/buzzer2.X.debug.o
 8 intcode CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
-8 intcode CODE >348:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+8 intcode CODE >348:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 2084 text26 CODE >7:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 2084 text26 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 2088 text26 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
@@ -129,9 +129,9 @@ $dist/default/debug/buzzer2.X.debug.o
 218E text26 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 21A2 text26 CODE >40:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 21B6 text26 CODE >41:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
-25B6 text25 CODE >225:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-25B6 text25 CODE >226:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2602 text25 CODE >227:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+25B6 text25 CODE >225:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+25B6 text25 CODE >226:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2602 text25 CODE >227:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 122A text24 CODE >11:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
 122A text24 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
 1230 text24 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
@@ -406,109 +406,109 @@ E06 text23 CODE >205:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcmul.c
 19EA text21 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 19F0 text21 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 1A04 text21 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
-23C0 text20 CODE >229:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-23C0 text20 CODE >230:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-23D2 text20 CODE >231:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2464 text20 CODE >232:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2466 text20 CODE >233:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2478 text20 CODE >234:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2494 text20 CODE >235:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2494 text20 CODE >236:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2500 text19 CODE >220:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2500 text19 CODE >221:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-255C text19 CODE >222:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2564 text19 CODE >223:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26A0 text18 CODE >257:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26A0 text18 CODE >258:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26B6 text18 CODE >259:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26C2 text18 CODE >260:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+23C0 text20 CODE >229:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+23C0 text20 CODE >230:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+23D2 text20 CODE >231:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2464 text20 CODE >232:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2466 text20 CODE >233:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2478 text20 CODE >234:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2494 text20 CODE >235:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2494 text20 CODE >236:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2500 text19 CODE >220:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2500 text19 CODE >221:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+255C text19 CODE >222:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2564 text19 CODE >223:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26A0 text18 CODE >257:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26A0 text18 CODE >258:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26B6 text18 CODE >259:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26C2 text18 CODE >260:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 2676 text17 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2676 text17 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2682 text17 CODE >38:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 268A text17 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2692 text17 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 269E text17 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
-12 intcode_body CODE >348:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2C intcode_body CODE >349:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-3A intcode_body CODE >350:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-3C intcode_body CODE >351:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-44 intcode_body CODE >353:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-80 intcode_body CODE >354:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-88 intcode_body CODE >355:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-90 intcode_body CODE >356:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-9A intcode_body CODE >357:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-A2 intcode_body CODE >359:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-AA intcode_body CODE >360:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-AC intcode_body CODE >361:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-AE intcode_body CODE >362:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-B0 intcode_body CODE >363:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-C0 intcode_body CODE >364:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-C0 intcode_body CODE >366:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-C6 intcode_body CODE >367:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-CA intcode_body CODE >368:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-106 intcode_body CODE >369:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-10A intcode_body CODE >371:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-13C intcode_body CODE >372:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-158 intcode_body CODE >373:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-176 intcode_body CODE >374:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-196 intcode_body CODE >375:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B6 intcode_body CODE >376:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1D6 intcode_body CODE >377:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F6 intcode_body CODE >378:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22A intcode_body CODE >379:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-246 intcode_body CODE >380:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-282 intcode_body CODE >381:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-284 intcode_body CODE >382:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-288 intcode_body CODE >383:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-288 intcode_body CODE >384:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-28E intcode_body CODE >385:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-28E intcode_body CODE >387:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-292 intcode_body CODE >389:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2A0 intcode_body CODE >390:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2A0 intcode_body CODE >392:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2DC intcode_body CODE >393:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2E0 intcode_body CODE >397:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-340 intcode_body CODE >398:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-37C intcode_body CODE >399:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-37E intcode_body CODE >400:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-386 intcode_body CODE >401:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-38A intcode_body CODE >402:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-38A intcode_body CODE >403:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-38C intcode_body CODE >404:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-3F0 intcode_body CODE >405:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-3F0 intcode_body CODE >407:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-40E intcode_body CODE >408:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-42C intcode_body CODE >409:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-44C intcode_body CODE >410:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-46C intcode_body CODE >411:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-48C intcode_body CODE >412:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-4AC intcode_body CODE >413:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-4E0 intcode_body CODE >414:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-4FC intcode_body CODE >416:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-50A intcode_body CODE >417:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-50E intcode_body CODE >419:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-50E intcode_body CODE >420:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+12 intcode_body CODE >348:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2C intcode_body CODE >349:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+3A intcode_body CODE >350:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+3C intcode_body CODE >351:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+44 intcode_body CODE >353:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+80 intcode_body CODE >354:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+88 intcode_body CODE >355:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+90 intcode_body CODE >356:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+9A intcode_body CODE >357:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+A2 intcode_body CODE >359:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+AA intcode_body CODE >360:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+AC intcode_body CODE >361:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+AE intcode_body CODE >362:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+B0 intcode_body CODE >363:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+C0 intcode_body CODE >364:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+C0 intcode_body CODE >366:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+C6 intcode_body CODE >367:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+CA intcode_body CODE >368:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+106 intcode_body CODE >369:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+10A intcode_body CODE >371:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+13C intcode_body CODE >372:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+158 intcode_body CODE >373:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+176 intcode_body CODE >374:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+196 intcode_body CODE >375:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B6 intcode_body CODE >376:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1D6 intcode_body CODE >377:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F6 intcode_body CODE >378:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22A intcode_body CODE >379:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+246 intcode_body CODE >380:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+282 intcode_body CODE >381:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+284 intcode_body CODE >382:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+288 intcode_body CODE >383:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+288 intcode_body CODE >384:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+28E intcode_body CODE >385:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+28E intcode_body CODE >387:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+292 intcode_body CODE >389:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2A0 intcode_body CODE >390:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2A0 intcode_body CODE >392:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2DC intcode_body CODE >393:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2E0 intcode_body CODE >397:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+340 intcode_body CODE >398:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+37C intcode_body CODE >399:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+37E intcode_body CODE >400:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+386 intcode_body CODE >401:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+38A intcode_body CODE >402:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+38A intcode_body CODE >403:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+38C intcode_body CODE >404:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+3F0 intcode_body CODE >405:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+3F0 intcode_body CODE >407:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+40E intcode_body CODE >408:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+42C intcode_body CODE >409:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+44C intcode_body CODE >410:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+46C intcode_body CODE >411:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+48C intcode_body CODE >412:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+4AC intcode_body CODE >413:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+4E0 intcode_body CODE >414:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+4FC intcode_body CODE >416:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+50A intcode_body CODE >417:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+50E intcode_body CODE >419:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+50E intcode_body CODE >420:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 264A text15 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 264A text15 CODE >37:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2658 text15 CODE >38:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2660 text15 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2668 text15 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
 2674 text15 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c99/common/Umul16.c
-21B8 text14 CODE >181:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-21B8 text14 CODE >183:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-21D8 text14 CODE >184:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-21F8 text14 CODE >185:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2218 text14 CODE >186:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2238 text14 CODE >187:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2258 text14 CODE >188:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2278 text14 CODE >189:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2278 text14 CODE >190:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2284 text14 CODE >191:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2298 text14 CODE >192:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22B4 text14 CODE >194:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22D4 text14 CODE >195:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22DC text14 CODE >196:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22DE text14 CODE >198:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+21B8 text14 CODE >181:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+21B8 text14 CODE >183:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+21D8 text14 CODE >184:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+21F8 text14 CODE >185:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2218 text14 CODE >186:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2238 text14 CODE >187:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2258 text14 CODE >188:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2278 text14 CODE >189:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2278 text14 CODE >190:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2284 text14 CODE >191:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2298 text14 CODE >192:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22B4 text14 CODE >194:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22D4 text14 CODE >195:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22DC text14 CODE >196:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22DE text14 CODE >198:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 1F4E text13 CODE >7:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 1F4E text13 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 1F54 text13 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
@@ -540,9 +540,9 @@ CA intcode_body CODE >368:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
 205A text13 CODE >39:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 206E text13 CODE >40:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
 2082 text13 CODE >41:/opt/microchip/xc8/v2.00/pic/sources/c99/common/aldiv.c
-2566 text12 CODE >225:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2566 text12 CODE >226:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-25B4 text12 CODE >227:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+2566 text12 CODE >225:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2566 text12 CODE >226:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+25B4 text12 CODE >227:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 E08 text11 CODE >11:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
 E08 text11 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
 E10 text11 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
@@ -817,152 +817,152 @@ FF4 text11 CODE >103:/opt/microchip/xc8/v2.00/pic/sources/c99/common/sprcdiv.c
 180E text8 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 1814 text8 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 1828 text8 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
-22E0 text7 CODE >229:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22E0 text7 CODE >230:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-22F4 text7 CODE >231:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-238A text7 CODE >232:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-238C text7 CODE >233:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-23A0 text7 CODE >234:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-23BE text7 CODE >235:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-23BE text7 CODE >236:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2496 text6 CODE >220:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2496 text6 CODE >221:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-24F6 text6 CODE >222:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-24FE text6 CODE >223:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26F8 text5 CODE >238:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26F8 text5 CODE >239:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26FA text5 CODE >240:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26FC text5 CODE >241:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26EC text4 CODE >243:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26EC text4 CODE >244:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26F0 text4 CODE >246:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26F2 text4 CODE >247:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26F4 text4 CODE >249:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26F6 text4 CODE >250:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26DE text3 CODE >176:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26DE text3 CODE >177:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26E6 text3 CODE >178:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26EA text3 CODE >179:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26C4 text2 CODE >200:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26C4 text2 CODE >201:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26C8 text2 CODE >202:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26CA text2 CODE >203:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26CC text2 CODE >205:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26CE text2 CODE >206:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26D0 text2 CODE >207:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26D2 text2 CODE >208:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-26DC text2 CODE >209:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A06 text1 CODE >262:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A06 text1 CODE >264:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A08 text1 CODE >265:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A0C text1 CODE >266:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A0E text1 CODE >267:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A16 text1 CODE >268:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A1A text1 CODE >269:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A22 text1 CODE >270:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A24 text1 CODE >272:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A38 text1 CODE >273:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A40 text1 CODE >274:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A48 text1 CODE >275:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A50 text1 CODE >276:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A58 text1 CODE >277:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A60 text1 CODE >278:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A68 text1 CODE >279:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A6C text1 CODE >280:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A7E text1 CODE >281:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A86 text1 CODE >282:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A8E text1 CODE >283:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A96 text1 CODE >284:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1A9E text1 CODE >285:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AA6 text1 CODE >286:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AAE text1 CODE >287:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AB2 text1 CODE >288:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AB2 text1 CODE >289:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1ABA text1 CODE >290:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AC2 text1 CODE >291:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1ACA text1 CODE >292:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AD2 text1 CODE >293:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1ADA text1 CODE >294:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AE6 text1 CODE >295:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AEA text1 CODE >297:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AF2 text1 CODE >298:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1AFA text1 CODE >300:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B0E text1 CODE >301:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B24 text1 CODE >302:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B28 text1 CODE >303:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B2C text1 CODE >305:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B2E text1 CODE >306:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B32 text1 CODE >308:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B48 text1 CODE >309:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B56 text1 CODE >310:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1B5A text1 CODE >311:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E02 text0 CODE >313:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E02 text0 CODE >315:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E04 text0 CODE >316:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E06 text0 CODE >317:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E08 text0 CODE >318:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E0A text0 CODE >320:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E0A text0 CODE >321:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E26 text0 CODE >322:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E30 text0 CODE >323:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E32 text0 CODE >324:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E34 text0 CODE >325:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E36 text0 CODE >326:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E46 text0 CODE >327:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E46 text0 CODE >328:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E76 text0 CODE >329:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E7E text0 CODE >330:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E8A text0 CODE >331:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1E8E text0 CODE >332:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1EBE text0 CODE >333:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1EC6 text0 CODE >334:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1ED2 text0 CODE >335:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1ED6 text0 CODE >336:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F06 text0 CODE >337:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F0E text0 CODE >338:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F1E text0 CODE >339:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F26 text0 CODE >340:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F34 text0 CODE >341:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F36 text0 CODE >342:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F42 text0 CODE >343:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F46 text0 CODE >344:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-1F4A text0 CODE >346:/home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
-2604 cinit CODE >1631:/tmp/xcXdRy1qh
-2604 cinit CODE >1633:/tmp/xcXdRy1qh
-2604 cinit CODE >1636:/tmp/xcXdRy1qh
-2604 cinit CODE >1703:/tmp/xcXdRy1qh
-2606 cinit CODE >1704:/tmp/xcXdRy1qh
-2608 cinit CODE >1705:/tmp/xcXdRy1qh
-260A cinit CODE >1706:/tmp/xcXdRy1qh
-260C cinit CODE >1707:/tmp/xcXdRy1qh
-260E cinit CODE >1708:/tmp/xcXdRy1qh
-2610 cinit CODE >1709:/tmp/xcXdRy1qh
-2614 cinit CODE >1710:/tmp/xcXdRy1qh
-2618 cinit CODE >1711:/tmp/xcXdRy1qh
-2618 cinit CODE >1712:/tmp/xcXdRy1qh
-261A cinit CODE >1713:/tmp/xcXdRy1qh
-261E cinit CODE >1714:/tmp/xcXdRy1qh
-2620 cinit CODE >1715:/tmp/xcXdRy1qh
-2622 cinit CODE >1716:/tmp/xcXdRy1qh
-2624 cinit CODE >1720:/tmp/xcXdRy1qh
-2628 cinit CODE >1721:/tmp/xcXdRy1qh
-262A cinit CODE >1722:/tmp/xcXdRy1qh
-262A cinit CODE >1723:/tmp/xcXdRy1qh
-262C cinit CODE >1724:/tmp/xcXdRy1qh
-262E cinit CODE >1725:/tmp/xcXdRy1qh
-2630 cinit CODE >1728:/tmp/xcXdRy1qh
-2634 cinit CODE >1729:/tmp/xcXdRy1qh
-2636 cinit CODE >1730:/tmp/xcXdRy1qh
-2636 cinit CODE >1731:/tmp/xcXdRy1qh
-2638 cinit CODE >1732:/tmp/xcXdRy1qh
-263A cinit CODE >1733:/tmp/xcXdRy1qh
-263C cinit CODE >1739:/tmp/xcXdRy1qh
-263C cinit CODE >1741:/tmp/xcXdRy1qh
-263E cinit CODE >1742:/tmp/xcXdRy1qh
-2640 cinit CODE >1744:/tmp/xcXdRy1qh
-2642 cinit CODE >1745:/tmp/xcXdRy1qh
-2644 cinit CODE >1746:/tmp/xcXdRy1qh
-2646 cinit CODE >1747:/tmp/xcXdRy1qh
+22E0 text7 CODE >229:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22E0 text7 CODE >230:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+22F4 text7 CODE >231:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+238A text7 CODE >232:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+238C text7 CODE >233:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+23A0 text7 CODE >234:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+23BE text7 CODE >235:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+23BE text7 CODE >236:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2496 text6 CODE >220:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2496 text6 CODE >221:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+24F6 text6 CODE >222:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+24FE text6 CODE >223:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26F8 text5 CODE >238:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26F8 text5 CODE >239:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26FA text5 CODE >240:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26FC text5 CODE >241:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26EC text4 CODE >243:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26EC text4 CODE >244:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26F0 text4 CODE >246:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26F2 text4 CODE >247:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26F4 text4 CODE >249:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26F6 text4 CODE >250:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26DE text3 CODE >176:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26DE text3 CODE >177:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26E6 text3 CODE >178:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26EA text3 CODE >179:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26C4 text2 CODE >200:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26C4 text2 CODE >201:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26C8 text2 CODE >202:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26CA text2 CODE >203:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26CC text2 CODE >205:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26CE text2 CODE >206:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26D0 text2 CODE >207:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26D2 text2 CODE >208:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+26DC text2 CODE >209:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A06 text1 CODE >262:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A06 text1 CODE >264:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A08 text1 CODE >265:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A0C text1 CODE >266:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A0E text1 CODE >267:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A16 text1 CODE >268:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A1A text1 CODE >269:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A22 text1 CODE >270:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A24 text1 CODE >272:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A38 text1 CODE >273:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A40 text1 CODE >274:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A48 text1 CODE >275:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A50 text1 CODE >276:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A58 text1 CODE >277:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A60 text1 CODE >278:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A68 text1 CODE >279:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A6C text1 CODE >280:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A7E text1 CODE >281:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A86 text1 CODE >282:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A8E text1 CODE >283:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A96 text1 CODE >284:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1A9E text1 CODE >285:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AA6 text1 CODE >286:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AAE text1 CODE >287:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AB2 text1 CODE >288:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AB2 text1 CODE >289:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1ABA text1 CODE >290:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AC2 text1 CODE >291:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1ACA text1 CODE >292:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AD2 text1 CODE >293:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1ADA text1 CODE >294:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AE6 text1 CODE >295:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AEA text1 CODE >297:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AF2 text1 CODE >298:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1AFA text1 CODE >300:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B0E text1 CODE >301:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B24 text1 CODE >302:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B28 text1 CODE >303:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B2C text1 CODE >305:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B2E text1 CODE >306:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B32 text1 CODE >308:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B48 text1 CODE >309:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B56 text1 CODE >310:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1B5A text1 CODE >311:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E02 text0 CODE >313:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E02 text0 CODE >315:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E04 text0 CODE >316:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E06 text0 CODE >317:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E08 text0 CODE >318:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E0A text0 CODE >320:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E0A text0 CODE >321:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E26 text0 CODE >322:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E30 text0 CODE >323:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E32 text0 CODE >324:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E34 text0 CODE >325:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E36 text0 CODE >326:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E46 text0 CODE >327:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E46 text0 CODE >328:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E76 text0 CODE >329:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E7E text0 CODE >330:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E8A text0 CODE >331:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1E8E text0 CODE >332:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1EBE text0 CODE >333:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1EC6 text0 CODE >334:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1ED2 text0 CODE >335:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1ED6 text0 CODE >336:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F06 text0 CODE >337:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F0E text0 CODE >338:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F1E text0 CODE >339:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F26 text0 CODE >340:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F34 text0 CODE >341:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F36 text0 CODE >342:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F42 text0 CODE >343:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F46 text0 CODE >344:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+1F4A text0 CODE >346:/home/afcidk/Claw-Machine/buzzer2.X/newmain.c
+2604 cinit CODE >1631:/tmp/xcXNcFmtR
+2604 cinit CODE >1633:/tmp/xcXNcFmtR
+2604 cinit CODE >1636:/tmp/xcXNcFmtR
+2604 cinit CODE >1703:/tmp/xcXNcFmtR
+2606 cinit CODE >1704:/tmp/xcXNcFmtR
+2608 cinit CODE >1705:/tmp/xcXNcFmtR
+260A cinit CODE >1706:/tmp/xcXNcFmtR
+260C cinit CODE >1707:/tmp/xcXNcFmtR
+260E cinit CODE >1708:/tmp/xcXNcFmtR
+2610 cinit CODE >1709:/tmp/xcXNcFmtR
+2614 cinit CODE >1710:/tmp/xcXNcFmtR
+2618 cinit CODE >1711:/tmp/xcXNcFmtR
+2618 cinit CODE >1712:/tmp/xcXNcFmtR
+261A cinit CODE >1713:/tmp/xcXNcFmtR
+261E cinit CODE >1714:/tmp/xcXNcFmtR
+2620 cinit CODE >1715:/tmp/xcXNcFmtR
+2622 cinit CODE >1716:/tmp/xcXNcFmtR
+2624 cinit CODE >1720:/tmp/xcXNcFmtR
+2628 cinit CODE >1721:/tmp/xcXNcFmtR
+262A cinit CODE >1722:/tmp/xcXNcFmtR
+262A cinit CODE >1723:/tmp/xcXNcFmtR
+262C cinit CODE >1724:/tmp/xcXNcFmtR
+262E cinit CODE >1725:/tmp/xcXNcFmtR
+2630 cinit CODE >1728:/tmp/xcXNcFmtR
+2634 cinit CODE >1729:/tmp/xcXNcFmtR
+2636 cinit CODE >1730:/tmp/xcXNcFmtR
+2636 cinit CODE >1731:/tmp/xcXNcFmtR
+2638 cinit CODE >1732:/tmp/xcXNcFmtR
+263A cinit CODE >1733:/tmp/xcXNcFmtR
+263C cinit CODE >1739:/tmp/xcXNcFmtR
+263C cinit CODE >1741:/tmp/xcXNcFmtR
+263E cinit CODE >1742:/tmp/xcXNcFmtR
+2640 cinit CODE >1744:/tmp/xcXNcFmtR
+2642 cinit CODE >1745:/tmp/xcXNcFmtR
+2644 cinit CODE >1746:/tmp/xcXNcFmtR
+2646 cinit CODE >1747:/tmp/xcXNcFmtR
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -986,14 +986,14 @@ CalcSpeed@pos 88 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 CalcSpeed@tmp 8A 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 _led_cycle F3 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug/buzzer2.X.debug.o
-__mediumconst 77E2 0 MEDIUMCONST 0 mediumconst /tmp/xcXLSGqgN.o
+__mediumconst 77E2 0 MEDIUMCONST 0 mediumconst /tmp/xcXhcQo6P.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug/buzzer2.X.debug.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug/buzzer2.X.debug.o
 _LATC F8B 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 _TMR0 FD6 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 _TMR3 FB2 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
-___sp 0 0 STACK 2 stack /tmp/xcXLSGqgN.o
+___sp 0 0 STACK 2 stack /tmp/xcXhcQo6P.o
 _main 1E02 0 CODE 0 text0 dist/default/debug/buzzer2.X.debug.o
 _wb_1 E9 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
 _wb_2 E7 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
@@ -1001,7 +1001,7 @@ _wm_1 EB 0 BANK0 1 bssBANK0 dist/default/debug/buzzer2.X.debug.o
 _wm_2 79 0 COMRAM 1 bssCOMRAM dist/default/debug/buzzer2.X.debug.o
 btemp 7F 0 COMRAM 1 temp dist/default/debug/buzzer2.X.debug.o
 __end_of_CalcSpeed 22E0 0 CODE 0 text14 dist/default/debug/buzzer2.X.debug.o
-start E 0 CODE 0 init /tmp/xcXLSGqgN.o
+start E 0 CODE 0 init /tmp/xcXhcQo6P.o
 ___flmul@aexp CA 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___flmul@bexp CB 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___flmul@prod CC 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
@@ -1028,11 +1028,11 @@ ttemp6 83 0 COMRAM 1 temp dist/default/debug/buzzer2.X.debug.o
 ttemp7 87 0 COMRAM 1 temp dist/default/debug/buzzer2.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug/buzzer2.X.debug.o
 __end_ofi2_PWM_Max_Duty 2604 0 CODE 0 text25 dist/default/debug/buzzer2.X.debug.o
-__accesstop 80 0 ABS 0 - /tmp/xcXLSGqgN.o
-intlevel0 0 0 CODE 0 text /tmp/xcXLSGqgN.o
-intlevel1 0 0 CODE 0 text /tmp/xcXLSGqgN.o
-intlevel2 0 0 CODE 0 text /tmp/xcXLSGqgN.o
-intlevel3 0 0 CODE 0 text /tmp/xcXLSGqgN.o
+__accesstop 80 0 ABS 0 - /tmp/xcXhcQo6P.o
+intlevel0 0 0 CODE 0 text /tmp/xcXhcQo6P.o
+intlevel1 0 0 CODE 0 text /tmp/xcXhcQo6P.o
+intlevel2 0 0 CODE 0 text /tmp/xcXhcQo6P.o
+intlevel3 0 0 CODE 0 text /tmp/xcXhcQo6P.o
 __size_of_PWM_Mode_On 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __end_ofi2___xxtofl 1A06 0 CODE 0 text21 dist/default/debug/buzzer2.X.debug.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug/buzzer2.X.debug.o
@@ -1057,8 +1057,8 @@ __Hclrtext 0 0 ABS 0 clrtext dist/default/debug/buzzer2.X.debug.o
 __pidataCOMRAM 26FE 0 CODE 0 idataCOMRAM dist/default/debug/buzzer2.X.debug.o
 ___wmul@multiplicand 82 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 i2___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/debug/buzzer2.X.debug.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXLSGqgN.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXLSGqgN.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXhcQo6P.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXhcQo6P.o
 __size_ofi2___wmul 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug/buzzer2.X.debug.o
 _CCP1M2 7DEA 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
@@ -1148,7 +1148,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/debug/buzzer2.X.debug.o
 __size_of___xxtofl 0 0 ABS 0 - dist/default/debug/buzzer2.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug/buzzer2.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug/buzzer2.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXLSGqgN.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXhcQo6P.o
 ___xxtofl@arg 9C 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___xxtofl@exp 9B 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 ___xxtofl@val 92 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
@@ -1305,8 +1305,8 @@ __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug/buzzer2.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug/buzzer2.X.debug.o
 ___fldiv@new_exp B1 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 _tmr1_cycle 7B 0 COMRAM 1 dataCOMRAM dist/default/debug/buzzer2.X.debug.o
-stackhi 5F3 0 ABS 0 - /tmp/xcXLSGqgN.o
-stacklo F7 0 ABS 0 - /tmp/xcXLSGqgN.o
+stackhi 5F3 0 ABS 0 - /tmp/xcXhcQo6P.o
+stacklo F7 0 ABS 0 - /tmp/xcXhcQo6P.o
 __Lintcode 8 0 CODE 0 intcode dist/default/debug/buzzer2.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug/buzzer2.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug/buzzer2.X.debug.o
@@ -1381,7 +1381,7 @@ __Ltext23 0 0 ABS 0 text23 dist/default/debug/buzzer2.X.debug.o
 __Ltext24 0 0 ABS 0 text24 dist/default/debug/buzzer2.X.debug.o
 __Ltext25 0 0 ABS 0 text25 dist/default/debug/buzzer2.X.debug.o
 __Ltext26 0 0 ABS 0 text26 dist/default/debug/buzzer2.X.debug.o
-__ramtop 600 0 RAM 0 ramtop /tmp/xcXLSGqgN.o
+__ramtop 600 0 RAM 0 ramtop /tmp/xcXhcQo6P.o
 ___aldiv@dividend 80 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o
 __Lpowerup E 0 CODE 0 powerup dist/default/debug/buzzer2.X.debug.o
 ?___xxtofl 92 0 BANK0 1 cstackBANK0 dist/default/debug/buzzer2.X.debug.o

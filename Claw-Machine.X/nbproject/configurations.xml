@@ -9,6 +9,7 @@
         <itemPath>modules/IR.h</itemPath>
         <itemPath>modules/TM1637.h</itemPath>
         <itemPath>modules/XYSensor.h</itemPath>
+        <itemPath>modules/motor.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -23,6 +24,7 @@
         <itemPath>modules/TT.c</itemPath>
         <itemPath>modules/TM1637.c</itemPath>
         <itemPath>modules/XYSendor.c</itemPath>
+        <itemPath>modules/motor.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -43,7 +45,7 @@
         <targetDevice>PIC18F4520</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pk4hybrid</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.00</languageToolchainVersion>
         <platform>2</platform>
@@ -154,6 +156,7 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

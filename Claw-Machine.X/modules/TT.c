@@ -3,6 +3,7 @@
 
 void TTConfig(void) {
     _TTPinConfig();
+    _CollConfig();
 }
 
 void TTturn(void) {
@@ -15,6 +16,15 @@ void TTturn(void) {
     LATDbits.LATD1 = 1;
 }
 
+void _CollConfig() { // RB4,RB5 on change interrupt
+    TRISBbits.RB5 = 1;
+    TRISBbits.RB4 = 1;
+    
+    INTCONbits.RBIF = 0;
+    INTCONbits.RBIE = 1;
+    INTCON2bits.RBIP = 1;
+}
+
 void _TTPinConfig(void) {
       
     // enable as output
@@ -22,10 +32,18 @@ void _TTPinConfig(void) {
     TRISDbits.RD1 = 0;
     TRISDbits.RD2 = 0;
     TRISDbits.RD3 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
+    TRISDbits.RD7 = 0;
     
     // stop all TT motors
     LATDbits.LATD0 = 1;
     LATDbits.LATD1 = 1;
     LATDbits.LATD2 = 1;
     LATDbits.LATD3 = 1;
+    LATDbits.LATD4 = 1;
+    LATDbits.LATD5 = 1;
+    LATDbits.LATD6 = 1;
+    LATDbits.LATD7 = 1;
 }

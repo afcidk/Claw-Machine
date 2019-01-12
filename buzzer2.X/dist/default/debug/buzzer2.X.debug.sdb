@@ -41,7 +41,7 @@
 "10 /opt/microchip/xc8/v2.00/pic/sources/c99/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-"176 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"176 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v _SetupClock SetupClock `(v  1 e 1 0 ]
 "181
 [v _CalcSpeed CalcSpeed `(i  1 e 2 0 ]
@@ -279,7 +279,7 @@
 [v _T2CKPS1 T2CKPS1 `VEb  1 e 0 @32337 ]
 "8530
 [v _TMR2ON TMR2ON `VEb  1 e 0 @32338 ]
-"89 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"89 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v _led_cycle led_cycle `i  1 e 2 0 ]
 "90
 [v _led2_cycle led2_cycle `i  1 e 2 0 ]
@@ -436,7 +436,7 @@
 [v ___fldiv@a a `d  1 p 4 36 ]
 "185
 } 0
-"225 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"225 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v _PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
 {
 "227
@@ -454,7 +454,7 @@
 [v ___aldiv@divisor divisor `l  1 p 4 4 ]
 "41
 } 0
-"181 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"181 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v _CalcSpeed CalcSpeed `(i  1 e 2 0 ]
 {
 "182
@@ -474,7 +474,7 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"348 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"348 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v _HI_ISR HI_ISR `IIH(v  1 e 1 0 ]
 {
 "407
@@ -491,7 +491,7 @@
 [v i2___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"257 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"257 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v _playTone playTone `(v  1 e 1 0 ]
 {
 "260
@@ -559,7 +559,7 @@
 [v i2___fldiv@a a `d  1 p 4 36 ]
 "185
 } 0
-"225 /home/afcidk/MPLABXProjects/buzzer2.X/newmain.c
+"225 /home/afcidk/Claw-Machine/buzzer2.X/newmain.c
 [v i2_PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
 {
 "227

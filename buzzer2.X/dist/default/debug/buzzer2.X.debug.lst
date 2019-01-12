@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Sun Jan  6 07:10:20 2019
+                                                                                               Fri Jan 11 11:21:51 2019
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1  0000                     
@@ -1717,7 +1717,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1623                           __CFG_EBTR3$OFF equ 0x0
   1624  0000                     global __CFG_EBTRB$OFF
   1625                           __CFG_EBTRB$OFF equ 0x0
-  1626  0000                     	file	"/tmp/xcXdRy1qh"
+  1626  0000                     	file	"/tmp/xcXNcFmtR"
   1627                           	line	#
   1628                           psect	cinit,class=CODE,delta=1,reloc=2
   1629                           global __pcinit
@@ -1787,7 +1787,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1693  0000F3                     	global	_current_tone
   1694                           _current_tone:
   1695  0000F5                            ds      2
-  1696  0000F5                     	file	"/tmp/xcXdRy1qh"
+  1696  0000F5                     	file	"/tmp/xcXNcFmtR"
   1697                           	line	#
   1698                           psect	cinit
   1699                           ; Initialize objects allocated to COMRAM (4 bytes)
@@ -11936,7 +11936,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Sun Jan  6 07:10:20 2019
+Symbol Table                                                                                   Fri Jan 11 11:21:51 2019
 
                ___fldiv@aexp 00B8                 ___fldiv@bexp 00B7                 ___fldiv@sign 00B0  
                          l99 26EA          ___wmul@multiplicand 0082                  __CFG_BORV$3 000000  
