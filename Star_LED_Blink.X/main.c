@@ -98,6 +98,7 @@ void LEDConfig() {
 void __interrupt() timer_zero() {
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
         LATA = 1 - LATA;
+        INTCONbits.TMR0IF = 0;
         /*
         INTCONbits.TMR0IF = 0;
         CURRENT = (CURRENT + 1) % 30;
