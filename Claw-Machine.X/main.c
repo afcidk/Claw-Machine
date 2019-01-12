@@ -67,8 +67,9 @@
  * RB0 -> infrared
  * RB1 -> micro switch for coin detection
  * RB2 -> grab button
- * RB5 -> electromagnet
- * RB3 -> motor collision detect 1
+ * RB3 -> electromagnet
+ * RB4 -> motor collision detect 2
+ * RB5 -> motor collision detect 1
  * RD0~RD7 -> motor
  * RC6, RC7 -> CLK/DIO for seven-segment display
  * timer0 -> motor delay timer
@@ -109,7 +110,12 @@ void __interrupt(high_priority) HI_ISR(void) {
     }
     else if (INTCONbits.RBIF) { // collision interrupt
         INTCONbits.RBIF = 0;
-        if (PORTBbits.RB5) {
+        if (PORTBbits.RB5==0) {
+            Nop();
+            Nop();
+            Nop();
+        }
+        if (PORTBbits.RB4==0) {
             Nop();
             Nop();
             Nop();

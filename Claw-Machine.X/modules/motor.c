@@ -3,8 +3,8 @@
 int GrabStat = 0;
 
 void MotorConfig() {
-    TRISBbits.TRISB4 = 0;
-    LATBbits.LATB4 = 0;
+    TRISBbits.TRISB3 = 0;  //electric manget
+    LATBbits.LATB3 = 0;
     Tmr0Config();
     Int2Config();
 }
@@ -26,11 +26,11 @@ void Int2Config() { // grab button
 }
 
 void magnet_on() {
-    LATBbits.LATB4 = 1;
+    LATBbits.LATB3 = 1;
 }
 
 void magnet_off() {
-    LATBbits.LATB4 = 0;
+    LATBbits.LATB3 = 0;
 }
 
 int isGrabbing() {

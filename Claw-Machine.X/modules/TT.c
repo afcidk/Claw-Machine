@@ -16,8 +16,9 @@ void TTturn(void) {
     LATDbits.LATD1 = 1;
 }
 
-void _CollConfig() { // RB3 on change interrupt
+void _CollConfig() { // RB4,RB5 on change interrupt
     TRISBbits.RB5 = 1;
+    TRISBbits.RB4 = 1;
     
     INTCONbits.RBIF = 0;
     INTCONbits.RBIE = 1;
