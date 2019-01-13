@@ -98,6 +98,7 @@ ${OBJECTDIR}/modules/IR.p1: modules/IR.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/modules/IR.p1.d 
 	@${RM} ${OBJECTDIR}/modules/IR.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/IR.p1 modules/IR.c 
+	@-${MV} ${OBJECTDIR}/modules/IR.d ${OBJECTDIR}/modules/IR.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/IR.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/TT.p1: modules/TT.c  nbproject/Makefile-${CND_CONF}.mk
@@ -105,6 +106,7 @@ ${OBJECTDIR}/modules/TT.p1: modules/TT.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/modules/TT.p1.d 
 	@${RM} ${OBJECTDIR}/modules/TT.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/TT.p1 modules/TT.c 
+	@-${MV} ${OBJECTDIR}/modules/TT.d ${OBJECTDIR}/modules/TT.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/TT.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/TM1637.p1: modules/TM1637.c  nbproject/Makefile-${CND_CONF}.mk
@@ -112,6 +114,7 @@ ${OBJECTDIR}/modules/TM1637.p1: modules/TM1637.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/modules/TM1637.p1.d 
 	@${RM} ${OBJECTDIR}/modules/TM1637.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/TM1637.p1 modules/TM1637.c 
+	@-${MV} ${OBJECTDIR}/modules/TM1637.d ${OBJECTDIR}/modules/TM1637.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/TM1637.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/XYSendor.p1: modules/XYSendor.c  nbproject/Makefile-${CND_CONF}.mk
@@ -119,6 +122,7 @@ ${OBJECTDIR}/modules/XYSendor.p1: modules/XYSendor.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/modules/XYSendor.p1.d 
 	@${RM} ${OBJECTDIR}/modules/XYSendor.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/XYSendor.p1 modules/XYSendor.c 
+	@-${MV} ${OBJECTDIR}/modules/XYSendor.d ${OBJECTDIR}/modules/XYSendor.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/XYSendor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/motor.p1: modules/motor.c  nbproject/Makefile-${CND_CONF}.mk
@@ -126,6 +130,7 @@ ${OBJECTDIR}/modules/motor.p1: modules/motor.c  nbproject/Makefile-${CND_CONF}.m
 	@${RM} ${OBJECTDIR}/modules/motor.p1.d 
 	@${RM} ${OBJECTDIR}/modules/motor.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/motor.p1 modules/motor.c 
+	@-${MV} ${OBJECTDIR}/modules/motor.d ${OBJECTDIR}/modules/motor.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/motor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
@@ -133,6 +138,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
@@ -141,6 +147,7 @@ ${OBJECTDIR}/modules/IR.p1: modules/IR.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/modules/IR.p1.d 
 	@${RM} ${OBJECTDIR}/modules/IR.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/IR.p1 modules/IR.c 
+	@-${MV} ${OBJECTDIR}/modules/IR.d ${OBJECTDIR}/modules/IR.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/IR.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/TT.p1: modules/TT.c  nbproject/Makefile-${CND_CONF}.mk
@@ -148,6 +155,7 @@ ${OBJECTDIR}/modules/TT.p1: modules/TT.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/modules/TT.p1.d 
 	@${RM} ${OBJECTDIR}/modules/TT.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/TT.p1 modules/TT.c 
+	@-${MV} ${OBJECTDIR}/modules/TT.d ${OBJECTDIR}/modules/TT.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/TT.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/TM1637.p1: modules/TM1637.c  nbproject/Makefile-${CND_CONF}.mk
@@ -155,6 +163,7 @@ ${OBJECTDIR}/modules/TM1637.p1: modules/TM1637.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/modules/TM1637.p1.d 
 	@${RM} ${OBJECTDIR}/modules/TM1637.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/TM1637.p1 modules/TM1637.c 
+	@-${MV} ${OBJECTDIR}/modules/TM1637.d ${OBJECTDIR}/modules/TM1637.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/TM1637.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/XYSendor.p1: modules/XYSendor.c  nbproject/Makefile-${CND_CONF}.mk
@@ -162,6 +171,7 @@ ${OBJECTDIR}/modules/XYSendor.p1: modules/XYSendor.c  nbproject/Makefile-${CND_C
 	@${RM} ${OBJECTDIR}/modules/XYSendor.p1.d 
 	@${RM} ${OBJECTDIR}/modules/XYSendor.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/XYSendor.p1 modules/XYSendor.c 
+	@-${MV} ${OBJECTDIR}/modules/XYSendor.d ${OBJECTDIR}/modules/XYSendor.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/XYSendor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/modules/motor.p1: modules/motor.c  nbproject/Makefile-${CND_CONF}.mk
@@ -169,6 +179,7 @@ ${OBJECTDIR}/modules/motor.p1: modules/motor.c  nbproject/Makefile-${CND_CONF}.m
 	@${RM} ${OBJECTDIR}/modules/motor.p1.d 
 	@${RM} ${OBJECTDIR}/modules/motor.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/modules/motor.p1 modules/motor.c 
+	@-${MV} ${OBJECTDIR}/modules/motor.d ${OBJECTDIR}/modules/motor.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/modules/motor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
@@ -176,6 +187,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
@@ -197,7 +209,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Claw-Machine.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/Claw-Machine.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     --rom=default,-7dc0-7fff --ram=default,-5f4-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffd-fff  $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/Claw-Machine.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/Claw-Machine.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     --rom=default,-7d30-7fff --ram=default,-5ef-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffc-ffc,-ffd-fff  $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/Claw-Machine.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/Claw-Machine.X.${IMAGE_TYPE}.hex 
 	
 else

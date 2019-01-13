@@ -87,7 +87,7 @@ void I2CConfig() {
     INTCON2bits.INTEDG1 = 1;
     // set global interrupt
     RCONbits.IPEN = 1;
-    INTCONbits.GIE = 1;
+    //INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
 }
 

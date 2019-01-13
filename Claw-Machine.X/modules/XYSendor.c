@@ -26,7 +26,7 @@ void ADCConfig(void) {
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
     RCONbits.IPEN = 1;
-    INTCONbits.GIE = 1;
+    //INTCONbits.GIE = 1;
     // open ADC convertor
     ADCON0bits.ADON = 0;   
 }

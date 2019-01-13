@@ -16,7 +16,7 @@
 #pragma config CCP2MX = PORTC   // CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)
 #pragma config PBADEN = OFF      // PORTB A/D Enable bit (PORTB<4:0> pins are configured as analog input channels on Reset)
 #pragma config LPT1OSC = OFF    // Low-Power Timer1 Oscillator Enable bit (Timer1 configured for higher power operation)
-#pragma config MCLRE = ON       // MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
+#pragma config MCLRE = OFF       // MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
 // CONFIG4L
 #pragma config STVREN = ON      // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
@@ -84,6 +84,8 @@ int NUMBER; // for seven-segment display
 int SENSOR_X, SENSOR_Y;
 int SENSITIVE = 100;
 int PRESERVE = 0;
+int PRESERVE_NUMBER = 0;
+int GrabSecond = 0;
 
 void main(void) {
     IRConfig();
@@ -92,8 +94,18 @@ void main(void) {
     ADCConfig();
     MotorConfig();
     
+    // Ouptut for music selection
+    TRISAbits.TRISA2 = 0;
+    TRISAbits.TRISA3 = 0;
+    LATAbits.LATA2 = 1;
+    LATAbits.LATA3 = 0;
+    Display(PRESERVE_NUMBER);
+    
     // start first adc conversion
+    //ADCON0bits.ADON = 1; // TODO: remove this after coin is available
     ADCON0bits.GO = 1;
+    
+    INTCONbits.GIE = 1;
     while (1) {
         // if grab pressed -> grab()
     }
@@ -102,13 +114,24 @@ void main(void) {
 
 
 void __interrupt(high_priority) HI_ISR(void) {
-    if (INTCON3bits.INT2IF) { // Grab button
+ 
+    if (INTCON3bits.INT2IF) { // Grab button   
+        INTCON3bits.INT2IF = 0;
+        if (GrabSecond) {
+            GrabSecond = 0;
+            return ;
+        }    
+        else GrabSecond = 1;
+        // close interrupt
+        INTCON3bits.INT2IE = 0;
         if (NUMBER == 0) {
             return;
         }
-        // close interrupt
-        INTCON3bits.INT2IE = 0;
-        INTCON3bits.INT2IF = 0;
+        LATAbits.LATA2 = 0;
+        LATAbits.LATA3 = 0;
+        
+        LATAbits.LATA2 = 0;
+        LATAbits.LATA3 = 1;
         // close the ADC convertor
         ADCON0bits.ADON = 0;
         // update NUMBER and display it
@@ -117,7 +140,7 @@ void __interrupt(high_priority) HI_ISR(void) {
             Display(NUMBER);
         }
         // grab the item
-        Grab();
+        Grab(PRESERVE>0);
         // reenable the claw machine
         if (NUMBER >= 10) {
             // open the ADC convertor 
@@ -127,26 +150,34 @@ void __interrupt(high_priority) HI_ISR(void) {
         }
     }
     else if (INTCONbits.INT0IF) { // infra-red control
+        
         // close the ADC convertor
         ADCON0bits.ADON = 0;
         INTCONbits.INT0IF = 0;
         if (PRESERVE >= 0) {
             PRESERVE -= 1;
-            NUMBER -= 30;
+            PRESERVE_NUMBER -= 30;
+            if (PRESERVE_NUMBER < 0) PRESERVE_NUMBER = 0;
+            Display(NUMBER);
         }
+        // music control
+        LATAbits.LATA2 = 1;
+        LATAbits.LATA3 = 1;
     }
     else if (INTCON3bits.INT1IF) { // micro switch for seven-segment display
         INTCON3bits.INT1IF = 0;
         NUMBER += 5; //need to divide by 2 (bug???)
+        PRESERVE_NUMBER += 5;
         if (NUMBER >= 10) {
             // open grab button interrupt
             INTCON3bits.INT2IE = 1;
             // open ADC convertor
             ADCON0bits.ADON = 1;
+            ADCON0bits.GO = 1;
         }
-        if (NUMBER >= 30) {
-            // record preserve number
-            PRESERVE = (int)(NUMBER / 30);
+        if (PRESERVE_NUMBER > 30){
+            NUMBER += 60;
+            PRESERVE_NUMBER = 0;
         }
         Display(NUMBER);
     } else if (PIR1bits.ADIF) { // XY Sensor ADC convertor interrupt
@@ -186,6 +217,3 @@ void __interrupt(high_priority) HI_ISR(void) {
 
 }
 
-void __interrupt(low_priority) LO_ISR(void) {
-    
-}

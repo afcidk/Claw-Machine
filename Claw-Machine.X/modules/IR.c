@@ -25,7 +25,7 @@ void _IRPinConfig(void) {
 
 void _IRIntConfig(void) {
     // global interrupt
-    INTCONbits.GIE = 1;
+    //INTCONbits.GIE = 1;
     RCONbits.IPEN = 1;
     
     // config bits for INT0(RB0)

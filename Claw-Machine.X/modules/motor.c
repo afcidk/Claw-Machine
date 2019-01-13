@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "motor.h"
+#include "XYSensor.h"
 
 #define _XTAL_FREQ 1000000
 
@@ -16,15 +17,6 @@ void MotorConfig() {
     // Tmr0Config();
     Int2Config();
 }
-/* no need for timer 0
-void Tmr0Config() {
-    INTCONbits.TMR0IE = 1;
-    INTCONbits.TMR0IF = 0;
-    INTCON2bits.TMR0IP = 1;
-    
-    TMR0 = 0xc2f6;
-}
-*/
 
 void Int2Config() { // grab button
     TRISBbits.TRISB2 = 1;
@@ -45,28 +37,42 @@ void magnet_off() {
 int isGrabbing() {
     return GrabStat;
 }
-*/
-void Grab() {
+ */
+
+void Grab(int stat) {
     // start put down the magnet
     MOTOR_Z_1 = 1;
     MOTOR_Z_2 = 0;
-    __delay_ms(1000);
+    __delay_ms(5200);
+    MOTOR_Z_1 = 0;
+    MOTOR_Z_2 = 0;
     // open the magnet
     magnet_on();
-    __delay_ms(1000);
-    // close the magnet
-    magnet_off();
     // start get back the magnet
     MOTOR_Z_1 = 0;
     MOTOR_Z_2 = 1;
-    __delay_ms(1000);
+    __delay_ms(6000);
+        // close the magnet
+    if (stat == 0)    magnet_off();
+    MOTOR_Z_1 = 0;
+    MOTOR_Z_2 = 0;
+    
     // back to the origin place
-    while (!PORTBbits.RB5) {
-        MOTOR_X_1 = 0;
-        MOTOR_X_2 = 1;
-    }
-    while (!PORTBbits.RB6) {
+    while (PORTBbits.RB5) {
         MOTOR_Y_1 = 0;
         MOTOR_Y_2 = 1;
+    }    
+    MOTOR_Y_1 = 0;
+    MOTOR_Y_2 = 0;
+    
+    
+    while (PORTBbits.RB6) {
+        MOTOR_X_1 = 1;
+        MOTOR_X_2 = 0;
+        
     }
+    MOTOR_X_1 = 0;
+    MOTOR_X_2 = 0;
+    if (stat == 1) magnet_off();
+    __delay_ms(1000);
 }
